@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
     return (
         <footer>
-            <div class="header-upper">
+            <div class="footer-upper">
                 <div>
                     <h4>Just Buy</h4>
                     <p>eCommerce Made Easy</p>
@@ -33,7 +33,7 @@ function Footer() {
                     </ul>
                 </div>
             </div>
-            <div class="header-lower">
+            <div class="footer-lower">
                 <div>
                     <p>&copy; Just Buy</p>
                     <p>We accept all major credit cards</p>
