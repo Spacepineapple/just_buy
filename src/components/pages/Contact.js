@@ -49,4 +49,4 @@ function Contact() {
     )
 }
 
-export default FAQ;
+export default Contact;
