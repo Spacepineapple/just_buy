@@ -8,7 +8,7 @@ function Shipping() {
             <p className="col-md-8 fs-4">To find out more about our returns policy, click the button below</p>
             <button className="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#returnsPolicyModal">View Policy</button>
         </div>
-        <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="returnsPolicyModal" aria-hidden="true">
+        <div className="modal fade" id="returnsPolicyModal" tabIndex="-1" aria-labelledby="returnsPolicyModal" aria-hidden="true">
             <div className="modal-dialog">
             <div className="modal-content">
                 <div className="modal-header">
@@ -16,7 +16,10 @@ function Shipping() {
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
-                    <p>We accept returns on all products within 35 days. Returned products may be exchanged for credit, a different product, or a full refund to the original payment method. To return your product, please follow the instructions in your order confirmation email. If you do not have your order confirmation, contact us using one of the methods on our contact page. Please note that in some cases, we cannot accept a return:</p>
+                    <p>We accept returns on all products within 35 days. Returned products may be exchanged for credit, a different product, or a full refund to the original payment method. To return your product, please follow the instructions in your order confirmation email. If you do not have your order confirmation, contact us using one of the methods on our contact page. 
+                    <br/>
+                    <br/>    
+                    Please note that in some cases, we cannot accept a return:</p>
                     <ul>
                         <li>Damaged items</li>
                         <li>Items from multipacks unless returned as a whole set</li>
