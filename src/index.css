@@ -43,10 +43,6 @@ footer {
   border: none;
 }
 
-.footer-cell ul :first-child {
-  font-weight: bold;
-}
-
 .footer-upper, .footer-lower {
   margin-left: 10%;
   margin-right: 10%;
