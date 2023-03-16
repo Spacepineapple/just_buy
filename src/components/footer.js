@@ -8,28 +8,34 @@ function Footer() {
                     <h4>Just Buy</h4>
                     <p>eCommerce Made Easy</p>
                 </div>
-                <div class="footer-cell">
-                    <ul>
-                        <li>Products</li>
-                        <li>Category One</li>
-                        <li>Category Two</li>
-                        <li>Category Three</li>
+                <div class="card footer-cell">
+                    <div class="card-header">
+                        Products
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Category One</li>
+                        <li class="list-group-item">Category Two</li>
+                        <li class="list-group-item">Category Three</li>
                     </ul>
                 </div>
-                <div class="footer-cell">
-                    <ul>
-                        <li>About Us</li>
-                        <li>Sitemap</li>
-                        <li>FAQ</li>
-                        <li>Terms and Conditions</li>
+                <div class="card footer-cell">
+                    <div class="card-header">
+                        Information
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">About Us</li>
+                        <li class="list-group-item">FAQ</li>
+                        <li class="list-group-item">Terms and Conditions</li>
                     </ul>
                 </div>
-                <div class="footer-cell">
-                    <ul>
-                        <li>Customer Service</li>
-                        <li>Contact Us</li>
-                        <li>Order Tracking</li>
-                        <li>Shipping and Returns</li>
+                <div class="card footer-cell">
+                    <div class="card-header">
+                        Customer Service
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Contact Us</li>
+                        <li class="list-group-item">Shipping and Order Tracking</li>
+                        <li class="list-group-item">Returns Policy</li>
                     </ul>
                 </div>
             </div>
