@@ -14,4 +14,4 @@ function FAQ() {
     )
 }
 
-export default AboutUs;
+export default FAQ;
