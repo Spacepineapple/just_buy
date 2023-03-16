@@ -21,7 +21,7 @@ footer {
 .footer-lower {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .footer-cell li {
@@ -31,7 +31,7 @@ footer {
 .footer-upper {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .footer-cell {
@@ -39,8 +39,15 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 15%;
+  border: none;
 }
 
 .footer-cell ul :first-child {
   font-weight: bold;
+}
+
+.footer-upper, .footer-lower {
+  margin-left: 10%;
+  margin-right: 10%;
 }
