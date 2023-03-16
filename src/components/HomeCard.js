@@ -3,11 +3,19 @@ export default function HomeCard() {
     <div className="home_Card">
       <a
         href="https://developer.mozilla.org/en-US/docs/Web/CSS/background"
-        className="home_card"
+        className="card-link"
       >
-        <h2 className="card__header">
-          Explore All<span>&rarr;</span>
-        </h2>
+        <div class="card">
+          <h2>Top Deal</h2>
+          <img
+            src="https://placehold.co/100x100"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">Shop more deals</p>
+          </div>
+        </div>
       </a>
     </div>
   );

@@ -29,49 +29,32 @@ export default function Carousel() {
         <div className="carousel-item active">
           {/* Todo - Add link */}
           <a href="#">
-            <svg
-              className="bd-placeholder-img"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
+            <img
+              src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
               aria-hidden="true"
               preserveAspectRatio="xMidYMid slice"
               focusable="false"
-            >
-              <rect width="100%" height="100%" fill="#777" />
-            </svg>
+              alt=""
+            />
             <div className="container">
               <div className="carousel-caption text-start">
-                <h1>Example headline.</h1>
-                <p>
-                  Some representative placeholder content for the first slide of
-                  the carousel.
-                </p>
-                <p></p>
+                <h1>Find the perfect gift this mothers day.</h1>
               </div>
             </div>
           </a>
         </div>
         <div className="carousel-item">
           <a href="#">
-            <svg
-              className="bd-placeholder-img"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
+            <img
+              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
               aria-hidden="true"
               preserveAspectRatio="xMidYMid slice"
               focusable="false"
-            >
-              <rect width="100%" height="100%" fill="#777" />
-            </svg>
+              alt=""
+            />
             <div className="container">
               <div className="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>
-                  Some representative placeholder content for the second slide
-                  of the carousel.
-                </p>
+                <h1>We have thousands of products on sale.</h1>
                 <p></p>
               </div>
             </div>
@@ -79,25 +62,16 @@ export default function Carousel() {
         </div>
         <div className="carousel-item">
           <a href="#">
-            <svg
-              className="bd-placeholder-img"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
+            <img
+              src="https://images.unsplash.com/photo-1615655406736-b37c4fabf923?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
               aria-hidden="true"
               preserveAspectRatio="xMidYMid slice"
               focusable="false"
-            >
-              <rect width="100%" height="100%" fill="#777" />
-            </svg>
+              alt=""
+            />
             <div className="container">
               <div className="carousel-caption text-end">
-                <h1>One more for good measure.</h1>
-                <p>
-                  Some representative placeholder content for the third slide of
-                  this carousel.
-                </p>
-                <p></p>
+                <h1>Explore our range of products.</h1>
               </div>
             </div>
           </a>

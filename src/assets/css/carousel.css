@@ -13,6 +13,7 @@
 
 /* Carousel base class */
 .carousel {
+  padding-top: 3rem;
   margin-bottom: 4rem;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -24,6 +25,10 @@
 /* Declare heights because of positioning of img element */
 .carousel-item {
   height: 32rem;
+}
+
+.carousel-item img {
+  object-fit: contain;
 }
 
 /* RESPONSIVE CSS

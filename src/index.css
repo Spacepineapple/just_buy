@@ -1,9 +1,17 @@
-/* .home_page {
-  max-width: 1200px;
+.home_page {
+  max-width: 1200px !important;
   margin: 0 auto;
 }
 
-.cards {
+.card-link {
+  color: #ec6e4c;
+}
+
+.card-link h2 {
+  color: black;
+}
+
+/* .cards {
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
