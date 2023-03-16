@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import Footer from "./components/Footer";
+import NavBar from "./NavBar";
+
 
 
 function App() {
   return (
     <div className="App">
+      <NavBar/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -24,5 +27,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
