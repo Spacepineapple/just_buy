@@ -2,7 +2,7 @@ import React from 'react';
 
 function FAQ() {
     return (
-        <div class="container">
+        <div className="container">
             <h2>Frequently Asked Questions</h2>
             <p>We love answering your questions, but to save us all some time, we compiled some of the most common things we're asked and our answers below. Still got a question? Find out more about how to contact us on our contact page!</p>
             <h3>What is Just Buy?</h3>
