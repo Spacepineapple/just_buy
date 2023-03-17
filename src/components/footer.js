@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 function Footer() {
     return (
@@ -23,9 +25,39 @@ function Footer() {
                         Information
                     </div>
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item">About Us</li>
-                        <li className="list-group-item">FAQ</li>
-                        <li className="list-group-item">Terms and Conditions</li>
+                        <li className="list-group-item">
+                            <NavLink
+                                to="/about"
+                                end
+                                className={({ isActive }) =>
+                                    isActive ? "link-active" : "nav-link"
+                                }
+                                >
+                                About Us
+                            </NavLink>
+                        </li>
+                        <li className="list-group-item">
+                            <NavLink
+                                to="/faq"
+                                end
+                                className={({ isActive }) =>
+                                    isActive ? "link-active" : "nav-link"
+                                }
+                                >
+                                FAQ
+                            </NavLink>
+                        </li>
+                        <li className="list-group-item">
+                            <NavLink
+                                to="/terms"
+                                end
+                                className={({ isActive }) =>
+                                    isActive ? "link-active" : "nav-link"
+                                }
+                                >
+                                Terms and Conditions
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
                 <div className="card footer-cell">
@@ -33,9 +65,39 @@ function Footer() {
                         Customer Service
                     </div>
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item">Contact Us</li>
-                        <li className="list-group-item">Shipping and Order Tracking</li>
-                        <li className="list-group-item">Returns Policy</li>
+                        <li className="list-group-item">
+                            <NavLink
+                                to="/contact"
+                                end
+                                className={({ isActive }) =>
+                                    isActive ? "link-active" : "nav-link"
+                                }
+                                >
+                                Contact Us
+                            </NavLink>
+                        </li>
+                        <li className="list-group-item">
+                            <NavLink
+                                to="/shipping"
+                                end
+                                className={({ isActive }) =>
+                                    isActive ? "link-active" : "nav-link"
+                                }
+                                >
+                                Shipping and Order Tracking
+                            </NavLink>
+                        </li>
+                        <li className="list-group-item">
+                            <NavLink
+                                to="/returns"
+                                end
+                                className={({ isActive }) =>
+                                    isActive ? "link-active" : "nav-link"
+                                }
+                                >
+                                Returns Policy
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>
