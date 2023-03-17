@@ -30,14 +30,14 @@ function NavBar() {
         <ul className="nav mx-auto mr-auto mt-2 mt-lg-0 justify-content-center">
           <li className="nav-item active">
             <NavLink
-                      to="/"
-                      end
-                      className={({ isActive }) =>
-                          isActive ? "nav-link active" : "nav-link"
-                      }
-                      >
-                      Home
-                      </NavLink>
+              to="/"
+              end
+              className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+              }
+              >
+              Home
+            </NavLink>
             </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
