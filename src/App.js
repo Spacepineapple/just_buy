@@ -1,11 +1,11 @@
 import React from "react";
-import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import HomePage from "./components/pages/HomePage";
-import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
-import FAQ from "./components/pages/FAQ";
+import About from "./components/pages/About";
 import Returns from "./components/pages/Returns";
+import FAQ from "./components/pages/FAQ";
 import Shipping from "./components/pages/Shipping";
 import Terms from "./components/pages/Terms";
 
