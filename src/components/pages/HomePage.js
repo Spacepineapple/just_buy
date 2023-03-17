@@ -1,5 +1,5 @@
-import HomeCard from "../components/HomeCard";
-import Carousel from "../components/Carousel";
+import HomeCard from "../HomeCard";
+import Carousel from "../Carousel";
 
 export default function HomePage() {
   return (

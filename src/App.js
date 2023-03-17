@@ -1,10 +1,16 @@
 import React from "react";
-import HomePage from "./pages/HomePage";
+import Footer from "./components/footer";
+import NavBar from "./components/NavBar";
+import HomePage from "./components/pages/HomePage";
 
-export default function App() {
+function App() {
   return (
-    <div>
+    <div className="App">
+      <NavBar />
       <HomePage />
+      <Footer />
     </div>
   );
 }
+
+export default App;
