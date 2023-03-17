@@ -12,9 +12,21 @@ import Terms from "./components/pages/Terms";
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <HomePage />
-      <Footer />
+      <Router basename="react-portfolio">
+        <div className="main-content">
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/returns" element={<Returns />} />
+            <Route path="/faq" element={<FAQ/>}  />
+            <Route path="/shipping" element={<Shipping/>} />
+            <Route path="/terms" element={<Terms/>} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
     </div>
   );
 }
