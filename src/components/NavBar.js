@@ -1,5 +1,6 @@
 import React from "react";
 import Login from "./pages/Login";
+import { NavLink } from 'react-router-dom';
 
 function NavBar() {
   return (
@@ -16,30 +17,54 @@ function NavBar() {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div></div>
-      <a className="navbar-brand" href="#">
+      <NavLink
+        to="/"
+        end
+        className={({ isActive }) =>
+            isActive ? "link-active" : "nav-link"
+        }
+        >
         Logo
-      </a>
+      </NavLink>
       <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul className="nav mx-auto mr-auto mt-2 mt-lg-0 justify-content-center">
           <li className="nav-item active">
-            <a className="nav-link" href="#">
-              Home
-            </a>
-          </li>
+            <NavLink
+                      to="/"
+                      end
+                      className={({ isActive }) =>
+                          isActive ? "nav-link active" : "nav-link"
+                      }
+                      >
+                      Home
+                      </NavLink>
+            </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
               Shop
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <NavLink
+              to="/about"
+              end
+              className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+              }
+              >
               About
-            </a>
-          </li>
+            </NavLink>
+            </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <NavLink
+              to="/contact"
+              end
+              className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+              }
+              >
               Contact
-            </a>
+            </NavLink>
           </li>
         </ul>
         <ul className="nav justify-content-end">
