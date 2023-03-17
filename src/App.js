@@ -5,7 +5,7 @@ import HomePage from "./components/pages/HomePage";
 import Contact from "./components/pages/Contact";
 import About from "./components/pages/About";
 import Returns from "./components/pages/Returns";
-import FAQ from "./components/pages/FAQ";
+import FAQ from "./components/pages/Faq";
 import Shipping from "./components/pages/Shipping";
 import Terms from "./components/pages/Terms";
 
