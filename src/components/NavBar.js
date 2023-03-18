@@ -16,7 +16,6 @@ function NavBar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div></div>
       <NavLink
         to="/"
         end

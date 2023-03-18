@@ -1,9 +1,9 @@
 export default function ShopPage() {
   return (
     <div className="shop-page">
-      <section class="categories">
-        <h2 class="header-caption">Shop by Categories</h2>
-        <div class="grid-container">
+      <section class="shop-categories">
+        <h2 class="shop-header__caption">Shop by Categories</h2>
+        <div class="shop-grid__container">
           <div class="shop-card clothing">
             <img
               class="shop-card__img"

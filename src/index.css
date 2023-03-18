@@ -20,15 +20,14 @@ body {
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-/* section {
+section {
   padding-top: 2rem;
   padding-bottom: 2rem;
-} */
+}
 
 .App {
   max-width: 1440px;
   margin: auto;
-  padding: 1.25rem;
 }
 
 footer {

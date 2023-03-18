@@ -1,4 +1,4 @@
-.grid-container {
+.shop-grid__container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -8,7 +8,7 @@
     "home home beauty beauty";
 }
 
-.header-caption {
+.shop-header__caption {
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
@@ -75,7 +75,7 @@
 }
 
 @media (max-width: 767px) {
-  .grid-container {
+  .shop-grid__container {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
@@ -91,7 +91,7 @@
 }
 
 @media (max-width: 500px) {
-  .grid-container {
+  .shop-grid__container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
