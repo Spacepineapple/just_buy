@@ -1,15 +1,35 @@
-.home_page {
-  max-width: 1200px !important;
-  margin: 0 auto;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.card-link {
-  color: #ec6e4c;
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.card-link h2 {
-  color: black;
+body {
+  background: #edf2f8;
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
+
+/* section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+} */
+
+/* .App {
+  max-width: 1440px;
+  margin: 80px auto;
+  padding: 1.25rem;
+} */
 
 footer {
   display: flex;

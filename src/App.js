@@ -9,6 +9,7 @@ import Returns from "./components/pages/Returns";
 import FAQ from "./components/pages/Faq";
 import Shipping from "./components/pages/Shipping";
 import Terms from "./components/pages/Terms";
+import ShopPage from "./components/pages/ShopPage";
 
 function App() {
   return (
@@ -18,12 +19,13 @@ function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/shop" element={<ShopPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/returns" element={<Returns />} />
-            <Route path="/faq" element={<FAQ/>}  />
-            <Route path="/shipping" element={<Shipping/>} />
-            <Route path="/terms" element={<Terms/>} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/shipping" element={<Shipping />} />
+            <Route path="/terms" element={<Terms />} />
           </Routes>
           <Footer />
         </div>

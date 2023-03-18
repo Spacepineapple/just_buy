@@ -9,7 +9,9 @@ import "bootstrap/dist/js/bootstrap.bundle";
 // Importing our Custom CSS
 import "./assets/css/reset.css";
 import "./index.css";
+import "./assets/css/shopPage.css";
 import "./assets/css/carousel.css";
+import "./assets/css/homeShowcase.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

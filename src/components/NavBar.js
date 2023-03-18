@@ -1,6 +1,6 @@
 import React from "react";
 import Login from "./pages/Login";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -20,10 +20,8 @@ function NavBar() {
       <NavLink
         to="/"
         end
-        className={({ isActive }) =>
-            isActive ? "link-active" : "nav-link"
-        }
-        >
+        className={({ isActive }) => (isActive ? "link-active" : "nav-link")}
+      >
         Logo
       </NavLink>
       <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -33,36 +31,42 @@ function NavBar() {
               to="/"
               end
               className={({ isActive }) =>
-                  isActive ? "nav-link active" : "nav-link"
+                isActive ? "nav-link active" : "nav-link"
               }
-              >
+            >
               Home
             </NavLink>
-            </li>
+          </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <NavLink
+              to="/shop"
+              end
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
               Shop
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
             <NavLink
               to="/about"
               end
               className={({ isActive }) =>
-                  isActive ? "nav-link active" : "nav-link"
+                isActive ? "nav-link active" : "nav-link"
               }
-              >
+            >
               About
             </NavLink>
-            </li>
+          </li>
           <li className="nav-item">
             <NavLink
               to="/contact"
               end
               className={({ isActive }) =>
-                  isActive ? "nav-link active" : "nav-link"
+                isActive ? "nav-link active" : "nav-link"
               }
-              >
+            >
               Contact
             </NavLink>
           </li>
