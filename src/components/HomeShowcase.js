@@ -1,8 +1,18 @@
+import HomeCard from "./HomeCard";
+
 export default function HomeShowcase() {
   return (
     <div className="home-showcase">
       <section className="grid-container">
-        <div className="grid-item">
+        <HomeCard />
+        <HomeCard />
+        <HomeCard />
+        <HomeCard />
+        <HomeCard />
+        <HomeCard />
+        <HomeCard />
+        <HomeCard />
+        {/* <div className="grid-item">
           <div className="home-card">
             <div className="home-card__header">Top Deals</div>
             <div className="home-card__img">
@@ -113,7 +123,7 @@ export default function HomeShowcase() {
               <a href="#">Browse all</a>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     </div>
   );
