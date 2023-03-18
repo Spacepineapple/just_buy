@@ -11,7 +11,8 @@ function AboutUs() {
         //     </div>
         // </div>
         <>
-        {data.map(card => <CardItem {...card} key={card.id}/>)}
+        {/* {data.map(card => <CardItem {...card} key={card.id}/>)} */}
+        <CardItem></CardItem>
         </>
     )
 }
