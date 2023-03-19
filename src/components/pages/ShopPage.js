@@ -18,7 +18,18 @@ export default function ShopPage() {
     fetchData();
   }, []);
 
-  // Todo: Map through the fetched data and create a card component for each of the 6 most popular categories.
+  // Todo
+  /**
+   * Create the CategoriesCard component
+   * Map through the fetched data and create a card for the chosen 6 categories
+   * Combine some of the categories to make one category; i.e:
+   * - smartphones + laptops = tech
+   * - home-decoration + furniture + lighting = home
+   * - womens dresses and shoes + mens shirt and shoes = clothing
+   * - watches + jewellery + sunglasses + bags = accessories
+   * - skincare + fragrances = beauty
+   * - groceries
+   */
   return (
     <div className="shop-page">
       <section class="shop-categories">
