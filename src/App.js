@@ -12,6 +12,7 @@ import Terms from "./components/pages/Terms";
 import ShopPage from "./components/pages/ShopPage";
 
 function App() {
+  // Todo: Add theme switcher code here
   return (
     <div className="App">
       <Router>

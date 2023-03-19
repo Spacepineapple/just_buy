@@ -1,8 +1,9 @@
 /* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap");
 
-/* Set color scheme variables */
+/* Variables */
 :root {
+  /* Colour variables */
   --light-color: #f8f9fa;
   --light-bg-color: #fff;
   --light-text-color: #343a40;
@@ -10,19 +11,17 @@
   --dark-color: #343a40;
   --dark-bg-color: #212529;
   --dark-text-color: #f8f9fa;
-}
 
-/* Set typography variables */
-:root {
+  /* Typography variables */
   --body-font: "Open Sans", sans-serif;
   --heading-font: "Merriweather", serif;
   --body-font-size: 16px;
   --body-line-height: 1.5;
 }
 
-/* Set global styles */
+/* Global styles */
 html {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--light-text-color);
   background-color: var(--light-bg-color);
 }
@@ -55,7 +54,24 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
-/* Set styles for light mode */
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* .App {
+  max-width: 1440px;
+  margin: auto;
+} */
+
+/* Styles for light mode */
 [data-theme="light"] {
   --primary-color: #007bff;
   --secondary-color: #6c757d;
@@ -63,7 +79,7 @@ h6 {
   --dark-color: #343a40;
 }
 
-/* Set styles for dark mode */
+/* Styles for dark mode */
 [data-theme="dark"] {
   --primary-color: #4e7c7a;
   --secondary-color: #bfbfbf;
@@ -74,10 +90,10 @@ h6 {
   background-color: var(--dark-bg-color);
 }
 
-/* Add media queries for responsive typography */
+/* Media queries for responsive typography */
 @media only screen and (min-width: 768px) {
   :root {
-    --body-font-size: 18px;
+    --body-font-size: 16px;
     --body-line-height: 1.5;
   }
 
@@ -94,7 +110,7 @@ h6 {
 
 @media only screen and (min-width: 1024px) {
   :root {
-    --body-font-size: 20px;
+    --body-font-size: 18px;
     --body-line-height: 1.6;
   }
 }
@@ -114,23 +130,6 @@ h6 {
 
 .mt-2 {
   margin-top: 1rem;
-}
-
-img,
-picture {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-section {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.App {
-  max-width: 1440px;
-  margin: auto;
 }
 
 footer {
@@ -181,6 +180,7 @@ footer {
 @media only screen and (min-width: 768px) {
   .container {
     max-width: 750px;
+    margin: auto;
   }
 }
 

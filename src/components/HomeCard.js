@@ -91,7 +91,6 @@ export default function HomeCard() {
           <a href="#">Shop more deals</a>
         </div>
       </div>
-      ;
     </div>
   );
 }

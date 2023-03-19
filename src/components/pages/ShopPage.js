@@ -1,4 +1,24 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 export default function ShopPage() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://dummyjson.com/products/categories"
+        );
+        setData(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  // Todo: Map through the fetched data and create a card component for each of the 6 most popular categories.
   return (
     <div className="shop-page">
       <section class="shop-categories">
