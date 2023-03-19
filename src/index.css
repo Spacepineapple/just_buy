@@ -1,17 +1,96 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap");
+
+/* Set CSS variables */
 :root {
-  --text-color: #333333;
-  --background-color: #f5f5f5;
-  --accent-color: #0072c6;
-  --positive-color: #009c2e;
-  --negative-color: #d3212d;
+  /* Colors */
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+
+  /* Typography */
+  --body-font: "Open Sans", sans-serif;
+  --heading-font: "Merriweather", serif;
+  --body-font-size: 16px;
+  --body-line-height: 1.5;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Set global styles */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  line-height: var(--body-line-height);
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Add media queries for responsive typography */
+@media only screen and (min-width: 768px) {
+  :root {
+    --body-font-size: 18px;
+    --body-line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  :root {
+    --body-font-size: 20px;
+    --body-line-height: 1.6;
+  }
+}
+
+/* Utility classes for spacing */
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
 }
 
 img,
@@ -19,13 +98,6 @@ picture {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-body {
-  background: #edf2f8;
-  line-height: 1.5;
-  font-size: 16px;
-  font-family: "Barlow Semi Condensed", sans-serif;
 }
 
 section {
