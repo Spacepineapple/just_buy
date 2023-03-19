@@ -1,15 +1,19 @@
 /* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap");
 
-/* Set CSS variables */
+/* Set color scheme variables */
 :root {
-  /* Colors */
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
   --light-color: #f8f9fa;
-  --dark-color: #343a40;
+  --light-bg-color: #fff;
+  --light-text-color: #343a40;
 
-  /* Typography */
+  --dark-color: #343a40;
+  --dark-bg-color: #212529;
+  --dark-text-color: #f8f9fa;
+}
+
+/* Set typography variables */
+:root {
   --body-font: "Open Sans", sans-serif;
   --heading-font: "Merriweather", serif;
   --body-font-size: 16px;
@@ -19,14 +23,14 @@
 /* Set global styles */
 html {
   font-size: 16px;
+  color: var(--light-text-color);
+  background-color: var(--light-bg-color);
 }
 
 body {
   font-family: var(--body-font);
   font-size: var(--body-font-size);
   line-height: var(--body-line-height);
-  color: var(--dark-color);
-  background-color: var(--light-color);
 }
 
 a {
@@ -49,6 +53,25 @@ h6 {
   font-weight: bold;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+
+/* Set styles for light mode */
+[data-theme="light"] {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+}
+
+/* Set styles for dark mode */
+[data-theme="dark"] {
+  --primary-color: #4e7c7a;
+  --secondary-color: #bfbfbf;
+  --light-color: #212529;
+  --dark-color: #f8f9fa;
+
+  color: var(--dark-text-color);
+  background-color: var(--dark-bg-color);
 }
 
 /* Add media queries for responsive typography */
