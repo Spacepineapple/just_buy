@@ -8,12 +8,12 @@
     "home home beauty beauty";
 }
 
-.shop-header__caption {
+.category-header__caption {
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
 
-.shop-card {
+.category-card {
   background-color: #ccc;
   text-align: center;
 
@@ -23,7 +23,7 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.shop-card:hover {
+.category-card:hover {
   transform: scale(1.025);
   cursor: pointer;
 }
@@ -52,7 +52,7 @@
   grid-area: beauty;
 }
 
-.shop-card__img {
+.category-card__img {
   position: absolute;
   top: 0;
   left: 0;
@@ -61,7 +61,7 @@
   object-fit: cover;
 }
 
-.shop-card__caption {
+.category-card__caption {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -83,7 +83,7 @@
       "footwear home beauty";
   }
 
-  .shop-card__caption {
+  .category-card__caption {
     padding: 0.5rem;
     margin: 0.5rem;
     font-size: 1rem;
@@ -100,7 +100,7 @@
       "home beauty";
   }
 
-  .shop-card__caption {
+  .category-card__caption {
     padding: 0.25rem;
     margin: 0.25rem;
     font-size: 0.75rem;
