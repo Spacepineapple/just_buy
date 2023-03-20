@@ -32,6 +32,12 @@ footer {
   display: flex;
 }
 
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Medium screens (tablets and small desktops) */
 @media only screen and (min-width: 768px) {
   .footer-upper, .footer-lower {
@@ -52,7 +58,6 @@ footer {
   .footer-cards {
     display: flex;
   }
-
 }
 
 /* Large screens (large desktops and high-resolution displays) */
@@ -60,7 +65,12 @@ footer {
   .footer-lower {
     display: flex;
     width: 100%;
+  }
+
+  .footer-cards {
+    display: flex;
     justify-content: space-evenly;
+    width: 75%;
   }
 
   .footer-cell {
@@ -79,4 +89,9 @@ footer {
     justify-content: space-evenly;
     flex-direction: row;
   }
+
+  .container-fluid {
+    align-items: flex-start;
+  }
+
 }
