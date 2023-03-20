@@ -24,26 +24,35 @@ footer {
 .footer-upper {
   display: flex;
   width: 100%;
-}
-
-.footer-lower, .footer-upper {
-  display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-
+.footer-lower {
+  display: flex;
+}
 
 /* Medium screens (tablets and small desktops) */
 @media only screen and (min-width: 768px) {
   .footer-upper, .footer-lower {
     margin-left: 10%;
     margin-right: 10%;
-    flex-direction: row;
   }
   .footer-lower {
     width: 100%;
     justify-content: space-evenly;
+    flex-direction: row;
   }
+  .footer-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-cards {
+    display: flex;
+  }
+
 }
 
 /* Large screens (large desktops and high-resolution displays) */
