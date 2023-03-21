@@ -2,6 +2,13 @@ import React from "react";
 
 export default function LoginDropMenu(){
 
+    state = {
+        firstName: "",
+        surname: "",
+        email: "",
+        password: "",
+      };
+
     return(<>
 <div className="dropdown-menu">
     <form className="px-4 py-3">
@@ -38,20 +45,32 @@ export default function LoginDropMenu(){
             <form>
             <div className="form-group mb-2">
     <label for="exampleInputEmail1">First Name</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter first Name"/>
+    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter first Name"
+    value = {this.state.firstName}
+    name = "firstName"
+    onChange={this.handleInputChange}/>
   </div>
   <div className="form-group mb-2">
     <label for="exampleInputEmail1">Surname</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Surname"/>
+    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Surname"
+    value = {this.state.surname}
+    name = "surname"
+    onChange={this.handleInputChange}/>
   </div>
   <div className="form-group mb-2">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+    value = {this.state.email}
+    name = "email"
+    onChange={this.handleInputChange}/>
     <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div className="form-group mb-2">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
+    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"
+    value = {this.state.password}
+    name = "password"
+    onChange={this.handleInputChange}/>
   </div>
   <div className="form-group mb-2">
     <label for="exampleInputPassword1">Confirm Password</label>
