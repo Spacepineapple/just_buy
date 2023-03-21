@@ -38,6 +38,10 @@ footer {
   align-items: center;
 }
 
+button {
+  background-color: #0072C6 !important;
+}
+
 /* Medium screens (tablets and small desktops) */
 @media only screen and (min-width: 768px) {
   .footer-upper, .footer-lower {

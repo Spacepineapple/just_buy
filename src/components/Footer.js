@@ -85,7 +85,7 @@ function Footer() {
                                         isActive ? "link-active" : "nav-link"
                                     }
                                     >
-                                    Shipping and Order Tracking
+                                    Order Tracking
                                 </NavLink>
                             </li>
                             <li className="list-group-item">
