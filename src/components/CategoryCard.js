@@ -100,20 +100,6 @@ export default function CategoryCard() {
    */
   return (
     <div class="shop-grid__container">
-      {/* {products.map((product) => {
-        <a
-          href="https://www.google.com/"
-          key={product.id}
-          className="category-card clothing"
-        >
-          <img
-            className="category-card__img"
-            src={product.images[1]}
-            alt={product.brand}
-          />
-          <p className="category-card__caption">Tech</p>
-        </a>;
-      })} */}
       <a href="https://www.google.com/" className="category-card clothing">
         <img
           className="category-card__img"
