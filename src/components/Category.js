@@ -50,33 +50,42 @@ export default function Category() {
     CATEGORIES.map(({ name }) => ({ name, products: [] }))
   );
 
-  // useEffect to fetch the data for each category when the component mounts
-  useEffect(() => {
-    CATEGORIES.forEach(({ query }, index) => {
-      // Fetch data from the API with the query parameter for the current category using axios
-      axios
-        .get(`https://dummyjson.com/products?category=${query}`)
-        .then(({ data }) => {
-          // Update categoryData with the new products for the current category
-          setCategoryData((prevCategoryData) => {
-            // Create a new array of objects with the spread operator
-            const newCategoryData = [...prevCategoryData];
-            // Update the products array for the current category using the current index
-            newCategoryData[index].products = data;
-            // Return the new array to update the state
-            return newCategoryData;
-          });
-        })
-        .catch((err) => console.log(err));
+  const handleEvent = () => {
+    useEffect(() => {
+      CATEGORIES.forEach(({ query }, index) => {
+        // Fetch data from the API with the query parameter for the current category using axios
+        axios
+          .get(`https://dummyjson.com/products?category=${query}`)
+          .then(({ data }) => {
+            // Update categoryData with the new products for the current category
+            setCategoryData((prevCategoryData) => {
+              // Create a new array of objects with the spread operator
+              const newCategoryData = [...prevCategoryData];
+              // Update the products array for the current category using the current index
+              newCategoryData[index].products = data;
+              // Return the new array to update the state
+              return newCategoryData;
+            });
+          })
+          .catch((err) => console.log(err));
+      });
     });
-  });
+  };
+  // useEffect to fetch the data for each category when the component mounts
+
   return (
     <section class="shop-categories">
       <h2 class="shop-header__caption">Shop by Categories</h2>
       <div className="shop-grid__container">
         {/* Map over the categoryData array and create a CategoryCard for each category */}
-        {categoryData.map(({ name, products, image }) => (
-          <CategoryCard key={name} name={name} products={products} />
+        {CATEGORIES.map(({ name, products, image }) => (
+          <CategoryCard
+            key={name}
+            name={name}
+            products={products}
+            image={image}
+            onClick={handleEvent}
+          />
         ))}
       </div>
     </section>

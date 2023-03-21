@@ -1,4 +1,5 @@
 import Category from "../Category";
+import CardItem from "./CardItem";
 
 export default function ShopPage() {
   return (
@@ -7,6 +8,7 @@ export default function ShopPage() {
 
       <section class="sales">
         <h2 class="header-caption">Products at Slashed Prices</h2>
+        {/* <CardItem /> */}
       </section>
     </div>
   );

@@ -1,7 +1,9 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useMatches } from "react-router";
 
 export default function CategoryProducts() {
-  const { categoryName } = match.params;
+  const { categoryName } = useMatches.params;
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
