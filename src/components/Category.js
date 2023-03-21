@@ -49,7 +49,7 @@ export default function Category() {
     // Initialize categoryData as an array of objects with the name and an empty products array for each category
     CATEGORIES.map(({ name }) => ({ name, products: [] }))
   );
-
+  /*
   const handleEvent = () => {
     useEffect(() => {
       CATEGORIES.forEach(({ query }, index) => {
@@ -71,6 +71,7 @@ export default function Category() {
       });
     });
   };
+  */
   // useEffect to fetch the data for each category when the component mounts
 
   return (
@@ -84,7 +85,6 @@ export default function Category() {
             name={name}
             products={products}
             image={image}
-            onClick={handleEvent}
           />
         ))}
       </div>
