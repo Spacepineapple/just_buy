@@ -20,15 +20,18 @@ function Product({data}) {
     if (item) {
         return (
             <div className="p-5 mb-4 bg-light rounded-3">
-                <div className="d-flex container-fluid col-md-3 py-5">
-                    <div className="col-md-5">
-                        <img src={item.images[0]}/>
-                    </div>
-                    <div className="d-flex col-md-8 flex-column">
-                        <h2 className="display-5 fw-bold">{item.name}</h2>
-                        <p className="col-md-8 fs-4">{item.description}</p>
-                        <p className="col-md-8 fs-4">{item.price}</p>
-                        <button type="button" className="btn btn-primary" onClick={console.log("added to cart")}>Add to Cart</button>
+                <div className="d-flex flex-column container-fluid col-md-7 py-5 align-items-center">
+                    <h2 className="display-5 fw-bold">{item.title}</h2>
+                    <div className="product-content d-flex col-md-8">
+                        <div className="col-md-5">
+                            <img src={item.images[0]}/>
+                        </div>
+                        <div className="d-flex col-md-10 flex-column align-items-center justify-content-center">
+                            <p className="col-md-12 fs-4">{item.description}</p>
+                            <p className="col-md-4 fs-4 d-flex justify-content-center">£{item.price}</p>
+                            <p className="col-md-4 fs-4 d-flex justify-content-center">{item.rating}</p>
+                            <button type="button" className="btn btn-primary" onClick={console.log("added to cart")}>Add to Cart</button>
+                        </div>
                     </div>
                 </div>
             </div>
