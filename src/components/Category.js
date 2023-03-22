@@ -2,89 +2,65 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
 
+const API_URL = "https://dummyjson.com/products";
+
 // Array of objects containing the name and query parameter for each new category
-const CATEGORIES = [
-  {
-    name: "tech",
-    query: "smartphone&category=laptops",
-    image:
-      "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-  },
-  {
-    name: "home",
-    query: "home-decoration&category=furniture&category=lighting",
-    image:
-      "https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-  },
-  {
-    name: "clothing",
-    query: "womens-dresses&category=tops&category=mens-shirts",
-    image:
-      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=734&q=80",
-  },
-  {
-    name: "accessories",
-    query: "watches&category=jewellery&category=sunglasses&category=bags",
-    image:
-      "https://images.unsplash.com/photo-1588361861040-ac9b1018f6d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vdHdlYXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-  },
-  {
-    name: "beauty",
-    query: "skincare&category=fragrances",
-    image:
-      "https://images.unsplash.com/photo-1643185539104-3622eb1f0ff6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-  },
-  {
-    name: "groceries",
-    query: "groceries",
-    image:
-      "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
-  },
-];
+const CATEGORIES = {
+  tech: ["smartphones", "laptops"],
+  home: ["home-decoration", "furniture", "lighting"],
+  clothing: ["womens-dresses", "tops", "mens-shirts"],
+  accessories: ["watches", "jewellery", "sunglasses", "bags"],
+  beauty: ["skincare", "fragrances"],
+  groceries: ["groceries"],
+};
 
 // Component
 export default function Category() {
-  // Create state variables for each category
-  const [categoryData, setCategoryData] = useState(
-    // Initialize categoryData as an array of objects with the name and an empty products array for each category
-    CATEGORIES.map(({ name }) => ({ name, products: [] }))
-  );
+  // Use a single state variable for all categories
+  const [categories, setCategories] = useState({});
 
-  const handleEvent = () => {
-    useEffect(() => {
-      CATEGORIES.forEach(({ query }, index) => {
-        // Fetch data from the API with the query parameter for the current category using axios
-        axios
-          .get(`https://dummyjson.com/products?category=${query}`)
-          .then(({ data }) => {
-            // Update categoryData with the new products for the current category
-            setCategoryData((prevCategoryData) => {
-              // Create a new array of objects with the spread operator
-              const newCategoryData = [...prevCategoryData];
-              // Update the products array for the current category using the current index
-              newCategoryData[index].products = data;
-              // Return the new array to update the state
-              return newCategoryData;
-            });
-          })
-          .catch((err) => console.log(err));
-      });
-    });
-  };
-  // useEffect to fetch the data for each category when the component mounts
+  // Use the useEffect hook to fetch the data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Use Promise.all to fetch data for all categories in parallel
+        const categoryPromises = Object.entries(CATEGORIES).map(
+          async ([name, category]) => {
+            const url = `${API_URL}?category=${category.join("&category=")}`;
+            console.log(url);
+            const response = await axios.get(url);
+            return { name, products: response.data };
+          }
+        );
+        const categoryData = await Promise.all(categoryPromises);
+        console.log(categoryData);
+        // Convert the array of objects to an object with the category name as the key
+        const newCategories = categoryData.reduce((acc, { name, products }) => {
+          return { ...acc, [name]: products };
+        }, {});
+
+        setCategories(newCategories);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <section class="shop-categories">
       <h2 class="shop-header__caption">Shop by Categories</h2>
       <div className="shop-grid__container">
-        {/* Map over the categoryData array and create a CategoryCard for each category */}
-        {CATEGORIES.map(({ name, products, image }) => (
+        {/* Map over the categories object instead of an array */}
+        {Object.entries(categories).map(([name, products], index) => (
           <CategoryCard
             key={name}
             name={name}
             products={products}
-            image={image}
-            onClick={handleEvent}
+            index={index}
+            // image={image}
+            // onClick={handleEvent}
           />
         ))}
       </div>
