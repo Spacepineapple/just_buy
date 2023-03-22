@@ -8,6 +8,10 @@ function Product({data}) {
     const [imgSrc, setImgSrc] = useState();
     let {id} = useParams();
 
+    const handleCart = (() => {
+        console.log("Added to cart!");
+    })
+
     useEffect (() => {
         axios
           .get(`https://dummyjson.com/products/${id}`)
@@ -33,7 +37,7 @@ function Product({data}) {
                             <p className="col-md-12 fs-4">{item.description}</p>
                             <p className="col-md-4 fs-4 d-flex justify-content-center">£{item.price}</p>
                             <p className="col-md-4 fs-4 d-flex justify-content-center">{item.rating}</p>
-                            <button type="button" className="btn btn-primary" onClick={console.log("added to cart")}>Add to Cart</button>
+                            <button type="button" className="btn btn-primary" onClick={handleCart}>Add to Cart</button>
                         </div>
                     </div>
                 </div>
