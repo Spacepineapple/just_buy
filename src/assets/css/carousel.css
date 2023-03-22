@@ -1,3 +1,7 @@
+.carousel {
+  padding-top: 0 !important;
+}
+
 .carousel-item img {
   object-fit: cover;
   object-position: center;

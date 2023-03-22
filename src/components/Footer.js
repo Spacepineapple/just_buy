@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer>
+    <footer className="custom-container">
       <div className="footer-upper">
-        <div className="footer-cell">
+        <div className="footer-cell footer-header">
           <h4>Just Buy</h4>
           <p>eCommerce Made Easy</p>
         </div>

@@ -3,7 +3,7 @@ import MyCarousel from "../MyCarousel";
 
 export default function HomePage() {
   return (
-    <div className="home-page">
+    <div className="home-page custom-container">
       <MyCarousel />
       <HomeShowcase />
     </div>

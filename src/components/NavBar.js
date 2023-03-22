@@ -1,6 +1,6 @@
 import React from "react";
-import Login from "./pages/Login";
 import { NavLink } from "react-router-dom";
+import Login from "./pages/Login";
 
 function NavBar() {
   return (
@@ -21,10 +21,10 @@ function NavBar() {
         end
         className={({ isActive }) => (isActive ? "link-active" : "nav-link")}
       >
-        Logo
+        <p className="logo">JustBuy</p>
       </NavLink>
       <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul className="nav mx-auto mr-auto mt-2 mt-lg-0 justify-content-center">
+        <ul className="nav mx-auto mr-auto mt-2 mt-lg-0 justify-content-start">
           <li className="nav-item active">
             <NavLink
               to="/"

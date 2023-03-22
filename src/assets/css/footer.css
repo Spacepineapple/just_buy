@@ -71,6 +71,25 @@ footer {
     font-size: 1rem;
   }
 
+  .footer-upper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20rem;
+  }
+
+  .footer-card__container {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 2;
+  }
+
   .footer-lower {
     display: flex;
     flex-direction: column;
