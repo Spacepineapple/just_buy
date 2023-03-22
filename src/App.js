@@ -11,6 +11,7 @@ import Shipping from "./components/pages/Shipping";
 import Terms from "./components/pages/Terms";
 import ShopPage from "./components/pages/ShopPage";
 import CategoryProducts from "./components/pages/CategoryProducts";
+import Product from "./components/pages/Product";
 
 function App() {
   // Todo: Add theme switcher code here
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/shop" element={<ShopPage />} />
             <Route path="/category/:name" element={<CategoryProducts/>}  />
+            <Route path="/category/:name/product/:id" element={<Product/>}  />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/returns" element={<Returns />} />

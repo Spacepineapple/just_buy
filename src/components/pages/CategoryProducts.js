@@ -2,6 +2,10 @@ import axios from "axios";
 import React, {useEffect, useState } from "react";
 import {useParams} from "react-router-dom";
 import { useMatches } from "react-router";
+import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Product from "./Product";
+
 
 export default function CategoryProducts() {
   const { name } = useParams();
@@ -47,26 +51,32 @@ export default function CategoryProducts() {
   if (products.products) {
     return (
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {products.products.map(({ name, images, price }) => (
-          <div key={name} style={{ width: "300px", margin: "20px" }}>
-            <img src={images[0]} style={{ width: "100%" }} alt="" />
-            <div
-              style={{
-                position: "relative",
-                bottom: "0",
-                left: "0",
-                backgroundColor: "black",
-                color: "white",
-                padding: "5px",
-              }}
-            >
-              <div>{name}</div>
-              <div>${price}</div>
-              <button onClick={() => handleAddToBasket({ name, images, price })}>
-                Add to Basket
-              </button>
+        {products.products.map(({ id, name, images, price }) => (
+          <Link to={`product/${id}`} key={"product "+ id +" link"}>
+            <Routes>
+              {/*Create a route with a placeholder id element on the end of the URL*/}
+              <Route path="*/product/:id" element={<Product data={products.products}/>}  />
+            </Routes>
+            <div key={name} style={{ width: "300px", margin: "20px" }}>
+              <img src={images[0]} style={{ width: "100%" }} alt="" />
+              <div
+                style={{
+                  position: "relative",
+                  bottom: "0",
+                  left: "0",
+                  backgroundColor: "black",
+                  color: "white",
+                  padding: "5px",
+                }}
+              >
+                <div>{name}</div>
+                <div>${price}</div>
+                <button onClick={() => handleAddToBasket({ name, images, price })}>
+                  Add to Basket
+                </button>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     );
