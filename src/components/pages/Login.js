@@ -1,5 +1,6 @@
 import React from "react";
 import SignUp from "./SignUp"
+import Form from "./testLogin"
 
 export default function LoginDropMenu(){
 
@@ -25,7 +26,6 @@ export default function LoginDropMenu(){
     <div className="dropdown-divider"></div>
     <a className="dropdown-item" data-bs-toggle="modal" data-bs-target="#signUp" href="#">Sign up</a>
 </div>
-<SignUp></SignUp>
-
+<Form></Form>
 </>)
 }
