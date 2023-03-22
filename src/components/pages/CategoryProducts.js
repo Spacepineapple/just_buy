@@ -55,7 +55,7 @@ export default function CategoryProducts() {
           <Link to={`product/${id}`} key={"product "+ id +" link"}>
             <Routes>
               {/*Create a route with a placeholder id element on the end of the URL*/}
-              <Route path="*/product/:id" element={<Product data={products.products}/>}  />
+              <Route path="*/product/:id" element={<Product/>}  />
             </Routes>
             <div key={name} style={{ width: "300px", margin: "20px" }}>
               <img src={images[0]} style={{ width: "100%" }} alt="" />
