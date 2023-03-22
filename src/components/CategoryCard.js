@@ -1,26 +1,19 @@
-import { Link } from "react-router-dom";
-
-export default function CategoryCard({ name, products, index }) {
-  console.log(products);
+export default function CategoryCard({ name, onClick }) {
+  // console.log(name);
   return (
-    <Link to={`/category/${name}`} className={`category-card ${name}`}>
-      {/* Display the image for the first product in the products array */}
-      <img
-        className="category-card__img"
-        src={products.products[index].images[0]}
-        alt=""
-      />
-      {/* Display the name of the category as a caption */}
-      <p className="category-card__caption">{name}</p>
-    </Link>
+    // Render a card with an image and the category name
+    <li
+      style={{
+        display: "inline-block",
+        padding: "10px",
+        border: "1px solid #ccc",
+        borderRadius: "5px",
+        marginRight: "10px",
+        cursor: "pointer",
+      }}
+      onClick={onClick}
+    >
+      {name}
+    </li>
   );
 }
-
-/*
-<a href="https://www.google.com/" className={`category-card ${name}`}>
-  // Display the image for the first product in the products array
-  <img className="category-card__img" src={products[0]?.image} alt="" />
-  // Display the name of the category as a caption
-  <p className="category-card__caption">{name}</p>
-</a>;
-*/
