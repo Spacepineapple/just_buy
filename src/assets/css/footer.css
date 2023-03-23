@@ -3,8 +3,8 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 1rem;
   margin-top: 2.5rem;
+  background: #fdebd2;
 }
 
 .footer-cell {
@@ -19,7 +19,7 @@ footer {
 .card,
 .list-group-item {
   border: none !important;
-  background: none;
+  background: none !important;
 }
 
 .list-group-item {
@@ -27,7 +27,7 @@ footer {
 }
 
 .card-header {
-  background: none;
+  background: none !important;
   font-weight: 600;
 }
 
@@ -57,7 +57,7 @@ footer {
   }
 
   .footer-lower {
-    margin-top: 1rem;
+    margin: 1.5rem 0;
   }
 }
 
@@ -66,7 +66,6 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    margin-bottom: 1rem;
     margin-top: 2.5rem;
     font-size: 1rem;
   }

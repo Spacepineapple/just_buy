@@ -23,30 +23,33 @@ const TopDeals = () => {
   }, []);
 
   return (
-    <section className="topDeals-grid__container">
-      {products.map((product) => (
-        <div key={product.id} className="grid-item">
-          <div className="topDeal-card">
-            <div>
-              <img
-                src={product.images[0]}
-                alt={product.description}
-                className="topDeal-card__img"
-              />
-            </div>
-            <div className="topDeal-card__header">{product.title}</div>
-            <div className="topDeal-card__price">
-              <p className="topDeal-card__discount">
-                {Math.ceil(product.discountPercentage)}% off
-              </p>
-              <p className="topDeal-card__cost">
-                Price: £{Math.ceil(product.price)}
-              </p>
+    <div className="top-deals">
+      <h2 class="header-caption">Products at Slashed Prices</h2>
+      <section className="topDeals-grid__container">
+        {products.map((product) => (
+          <div key={product.id} className="grid-item">
+            <div className="topDeal-card">
+              <div>
+                <img
+                  src={product.images[0]}
+                  alt={product.description}
+                  className="topDeal-card__img"
+                />
+              </div>
+              <div className="topDeal-card__header">{product.title}</div>
+              <div className="topDeal-card__price">
+                <p className="topDeal-card__discount">
+                  {Math.ceil(product.discountPercentage)}% off
+                </p>
+                <p className="topDeal-card__cost">
+                  Price: £{Math.ceil(product.price)}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-    </section>
+        ))}
+      </section>
+    </div>
   );
 };
 

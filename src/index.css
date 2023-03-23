@@ -3,17 +3,11 @@
 
 /* Variables */
 :root {
-  /* Light mode */
-  --color-primary: #000000;
-  --color-secondary: #ffffff;
-  --color-accent: #c3073f;
-  --color-background: #efefef;
-
-  /* Dark mode */
-  --color-primary-dark: #ffffff;
-  --color-secondary-dark: #000000;
-  --color-accent-dark: #ff2d55;
-  --color-background-dark: #1c1c1e;
+  --primary-color: #f56400;
+  --secondary-color: #f5e8df;
+  --background-color: #efefef;
+  --text-color: #111111;
+  --accent-color: #1c1c1c;
 
   /* Typography variables */
   --body-font: "Open Sans", sans-serif;
@@ -25,15 +19,15 @@
 /* Global styles */
 html {
   font-size: 14px;
-  color: var(--light-text-color);
+  color: var(--text-color);
 }
 
 body {
   font-family: var(--body-font);
   font-size: var(--body-font-size);
   line-height: var(--body-line-height);
-  background-color: var(--color-background);
-  color: var(--color-primary);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 a {
@@ -41,10 +35,10 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+/* a:hover {
   color: var(--secondary-color);
   text-decoration: underline;
-}
+} */
 
 h1,
 h2,
@@ -64,32 +58,7 @@ section {
 }
 
 nav {
-  background: #434344 !important;
-  color: var(--color-secondary) !important;
-  padding: 1rem !important;
-}
-
-nav > .nav-link {
-  color: var(--color-secondary) !important;
-}
-
-/* Styles for light mode */
-[data-theme="light"] {
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --light-color: #f8f9fa;
-  --dark-color: #343a40;
-}
-
-/* Styles for dark mode */
-[data-theme="dark"] {
-  --primary-color: #4e7c7a;
-  --secondary-color: #bfbfbf;
-  --light-color: #212529;
-  --dark-color: #f8f9fa;
-
-  color: var(--dark-text-color);
-  background-color: var(--dark-bg-color);
+  font-family: var(--heading-font);
 }
 
 /* Media queries for responsive typography */
@@ -144,7 +113,7 @@ nav > .nav-link {
 }
 
 button {
-  background-color: #0072c6 !important;
+  background-color: var(--primary-color) !important;
 }
 
 /* Medium screens (tablets and small desktops) */
