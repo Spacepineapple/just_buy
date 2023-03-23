@@ -10,6 +10,7 @@ function Checkout() {
     return (
         <div>
             <h2>Checkout</h2>
+            
             <p>See your basket below, make any changes you wish to and then use the Checkout button to checkout!</p>
             {productArray.map(product => {
                 console.log(product);
@@ -21,6 +22,7 @@ function Checkout() {
                 </Routes>
             <button>Checkout</button>
             </Link>
+            
         </div>
     )
 }
