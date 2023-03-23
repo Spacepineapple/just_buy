@@ -1,80 +1,4 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 1.25rem;
-  grid-template-areas:
-    "clothing groceries footwear tech"
-    "home home beauty beauty";
-}
-
-.header-caption {
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-}
-
-.shop-card {
-  background-color: #ccc;
-  text-align: center;
-
-  position: relative;
-  padding-bottom: 50%;
-
-  transition: transform 0.2s ease-in-out;
-}
-
-.shop-card:hover {
-  transform: scale(1.025);
-  cursor: pointer;
-}
-
-.clothing {
-  grid-area: clothing;
-}
-
-.groceries {
-  grid-area: groceries;
-}
-
-.footwear {
-  grid-area: footwear;
-}
-
-.tech {
-  grid-area: tech;
-}
-
-.home {
-  grid-area: home;
-}
-
-.beauty {
-  grid-area: beauty;
-}
-
-.shop-card__img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.shop-card__caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 0.75rem;
-  margin: 0.75rem;
-  background-color: #fff;
-  color: #000;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .grid-container {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -88,9 +12,9 @@
     margin: 0.5rem;
     font-size: 1rem;
   }
-}
+} */
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -104,5 +28,139 @@
     padding: 0.25rem;
     margin: 0.25rem;
     font-size: 0.75rem;
+  }
+} */
+
+@media only screen and (max-width: 767px) {
+  .shop-page {
+    display: none;
+  }
+}
+
+/* Media queries for responsive typography */
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.25rem;
+    grid-template-areas:
+      "clothing groceries"
+      " tech footwear"
+      "home beauty";
+  }
+
+  .clothing {
+    grid-area: clothing;
+  }
+
+  .groceries {
+    grid-area: groceries;
+  }
+
+  .footwear {
+    grid-area: footwear;
+  }
+
+  .tech {
+    grid-area: tech;
+  }
+
+  .home {
+    grid-area: home;
+  }
+
+  .beauty {
+    grid-area: beauty;
+  }
+
+  .shop-card__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem !important;
+    margin: 0.5rem !important;
+    font-size: 1rem !important;
+    color: #f56400 !important;
+    background-color: #efefef !important;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .header-caption {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem !important;
+  }
+
+  .shop-card {
+    background-color: #ccc;
+    text-align: center;
+    position: relative;
+    padding-bottom: 50%;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .shop-card:hover {
+    transform: scale(1.025);
+    cursor: pointer;
+  }
+
+  .shop-card__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "clothing groceries footwear tech"
+      "home home beauty beauty";
+  }
+
+  .header-caption {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem !important;
+  }
+
+  .shop-card {
+    background-color: #ccc;
+    text-align: center;
+    position: relative;
+    padding-bottom: 50%;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .shop-card:hover {
+    transform: scale(1.025);
+    cursor: pointer;
+  }
+
+  .shop-card__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .shop-card__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem !important;
+    margin: 0.5rem !important;
+    font-size: 1.25rem !important;
+    color: #f56400 !important;
+    background-color: #efefef !important;
+    text-transform: uppercase;
+    font-weight: 600;
   }
 }

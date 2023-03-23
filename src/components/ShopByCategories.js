@@ -3,7 +3,7 @@ import "../assets/css/shopByCategories.css";
 export default function ShopByCategories() {
   return (
     <div className="shop-page">
-      <section class="categories">
+      <section class="categories custom-container">
         <h2 class="header-caption">Our Top Categories</h2>
         <div class="grid-container">
           <div class="shop-card clothing">

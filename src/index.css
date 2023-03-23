@@ -53,12 +53,18 @@ h6 {
 }
 
 section {
-  padding-top: 2rem;
   padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 nav {
   font-family: var(--heading-font);
+}
+
+.custom-container {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 0.75rem !important;
 }
 
 /* Media queries for responsive typography */
@@ -77,6 +83,13 @@ nav {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
   }
+
+  .custom-container {
+    width: 100% !important;
+    max-width: 750px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -87,23 +100,9 @@ nav {
 
   .custom-container {
     width: 100% !important;
-    max-width: 1200px !important;
+    max-width: 1024px !important;
     margin: 0 auto !important;
   }
-  /* .footer-cell li {
-    list-style-type: none;
-  }
-
-  .footer-upper {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-lower {
-    display: flex;
-  } */
 
   .container-fluid {
     display: flex;
@@ -115,61 +114,3 @@ nav {
 button {
   background-color: var(--primary-color) !important;
 }
-
-/* Medium screens (tablets and small desktops) */
-/* @media only screen and (min-width: 768px) {
-  .footer-upper,
-  .footer-lower {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-  .footer-lower {
-    width: 100%;
-    justify-content: space-evenly;
-    flex-direction: row;
-  }
-  .footer-upper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-cards {
-    display: flex;
-  }
-} */
-
-/* Large screens (large desktops and high-resolution displays) */
-/* @media only screen and (min-width: 1200px) {
-  .footer-lower {
-    display: flex;
-    width: 100%;
-  }
-
-  .footer-cards {
-    display: flex;
-    justify-content: space-evenly;
-    width: 75%;
-  }
-
-  .footer-cell {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 15%;
-    border: none;
-  }
-
-  .footer-upper,
-  .footer-lower {
-    margin-left: 10%;
-    margin-right: 10%;
-    justify-content: space-evenly;
-    flex-direction: row;
-  }
-
-  .container-fluid {
-    align-items: flex-start;
-  }
-} */
