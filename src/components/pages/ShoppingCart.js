@@ -1,9 +1,8 @@
 import React from 'react';
 import items from "../../items.json"
 
-console.log(items)
 
-export default function ShoppingCart() {
+export default function ShoppingCart({props}) {
 
     return(<>
   
@@ -34,15 +33,15 @@ export default function ShoppingCart() {
             </tr>
           </thead>
           <tbody>
-          {items.map(item => (
-      item.inCart ? (
+          {/* {items.map(item => (
+      item.inCart ? ( */}
         <tr>
               
               <td className="w-25">
-                <img src={item.img}/>
+                <img src={props.product.images[0]}/>
               </td>
-              <td>{item.title}</td>
-              <td>89$</td>
+              <td>{props.product.title}</td>
+              <td>{props.product.price}</td>
               <td className="qty"><input type="text" className="form-control" id="input1" /></td>
               <td>178$</td>
               <td>
@@ -51,11 +50,12 @@ export default function ShoppingCart() {
                   <i className="fa fa-times"></i>
                 </a>
               </td>
-            </tr>) : <></>
+            </tr>
+            {/* </tr>) : <></> */}
 
 
       
-    ))}
+    {/* ))} */}
             
           </tbody>
         </table> 
