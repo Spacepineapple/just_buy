@@ -1,42 +1,55 @@
-import React, { Component } from "react";
+import { useState } from 'react';
 
+export default function Form(){
 
-let loginIn = false;
-
-class Form extends Component {
-    state = {
-    firstName: "",
-    };
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-  
-  handleFormSubmit = event => {
-    event.preventDefault();
-    alert(`Hello ${this.state.firstName} ${this.state.surname}`);
-            this.setState({
-              firstName: "",
-              surname: "",
-        
-            
-            });
-        };
-
+    const [firstName, setFirstName] = useState('');
+    const [surname, setSurname] = useState('')
+    const [email, setEmail] = useState('')
+    const [pwd, setPwd] = useState('');
+    const [pwd2, setPwd2] = useState('');
     
+    const [signedIn, setSignedIn] = useState(false);
 
-  render() {
-    if (loginIn === false) {
+  const handleSubmit = async (e) => {
+        e.preventDefault();
+        setFirstName(firstName);
+        setSurname(surname);
+        setEmail(email);
+        setPwd(pwd);
+        setPwd2(pwd2);
+        setSignedIn(false);
+    }
+  
+    const handleInputChange = async (e) => {
+        e.preventDefault();
+        setFirstName("");
+        setSurname("");
+        setEmail("");
+        setPwd("");
+        setPwd2("");
+        setSignedIn(true);
+        }
 
-    return (
+
+        return(<>
+        {signedIn ? (
+
+<div className="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
+<div className="modal-dialog" role="document">
+    <div className="modal-content"> 
+        <div className="modal-header">
+            <h5 className="modal-title" id="signUpLabel">Register with us</h5>
+            <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div></div></div></div>
+        
+        ) : (
 <div className="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
     <div className="modal-dialog" role="document">
         <div className="modal-content"> 
             <div className="modal-header">
-                <h5 className="modal-title" id="signUpLabel">Register with us {this.state.firstName}</h5>
+                <h5 className="modal-title" id="signUpLabel">Register with us</h5>
                 <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -46,10 +59,11 @@ class Form extends Component {
                     <label for="exampleInputFirstName">First Name</label>
                     <div className="form-group mb-2">
                         <input
-                        value={this.state.firstName}
-                        name="firstName"
-                        onChange={this.handleInputChange}
-                        type="text"
+                        className="form-control"
+                         type="text"
+                         onChange={(e) => setFirstName(e.target.value)}
+                         value={firstName}
+                         required
                         placeholder="First Name"
                         />
                     </div>
@@ -57,71 +71,57 @@ class Form extends Component {
                     <label for="exampleInputSurname">Surname</label>
                     <div className="form-group mb-2">
                     <input
-                    value={this.state.surname}
-                    name="surname"
-                    onChange={this.handleInputChange}
+                    className="form-control"
                     type="text"
-                    placeholder="Last Name"
+                    onChange={(e) => setSurname(e.target.value)}
+                    value={surname}
+                    required
+                   placeholder="Last Name"
                     />
                     </div>
                     <label for="exampleInputEmail1">Email</label>
                     <div className="form-group mb-2">
                     <input
-                    value={this.state.email}
-                    name="email"
-                    onChange={this.handleInputChange}
+                    className="form-control"
                     type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    required
                     placeholder="Email"
                     />
                     </div>
                     <label for="exampleInputPassword">Password</label>
                     <div className="form-group mb-2">
                     <input
-                    value={this.state.password}
-                    name="password"
-                    onChange={this.handleInputChange}
+                    className="form-control"
                     type="password"
-                    placeholder="password"
+                    onChange={(e) => setPwd(e.target.value)}
+                    value={pwd}
+                    required
+                   placeholder="password"
                     />
                     </div>
                     <label for="exampleInputPasswordConfirm">Confirm your password</label>
                     <div className="form-group mb-2">
                     <input
-                    value={this.state.passwordConfirm}
-                    name="email"
-                    onChange={this.handleInputChange}
+                    className="form-control"
                     type="password"
-                    placeholder="Password confirmation"
+                    onChange={(e) => setPwd2(e.target.value)}
+                    value={pwd2}
+                    required
+                   placeholder="password confirmation"
                     />
                     </div>
                 </form>
                 <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button onClick={this.handleFormSubmit} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
+                    <button onClick={handleInputChange} type="button" className="btn btn-secondary" >Submit</button>
                 </div>
             </div>
         </div>
     </div>
-</div>)
+</div>)}
 
-}else if (loginIn === true){
-
-return (
-    <div className="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
-    <div className="modal-dialog" role="document">
-        <div className="modal-content"> 
-            <div className="modal-header">
-                <h5 className="modal-title" id="signUpLabel">Register with us {this.state.firstName}</h5>
-                <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            </div></div></div>
-
-
-)
-}
-}
-}
-
-export default Form;
+        </>)
+    
+    }

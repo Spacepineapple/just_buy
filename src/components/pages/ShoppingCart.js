@@ -6,7 +6,7 @@ console.log(items)
 export default function ShoppingCart() {
 
     return(<>
-   
+  
         <div className="container"> 
 </div>
 

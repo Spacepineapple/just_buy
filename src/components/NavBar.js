@@ -1,7 +1,6 @@
 import React from "react";
 import Login from "./pages/Login";
 import { NavLink } from 'react-router-dom';
-import ShoppingCart from "./pages/ShoppingCart";
 
 function NavBar() {
   return (
@@ -115,7 +114,6 @@ function NavBar() {
                 </span>
               </sup>
             </a>
-            <ShoppingCart></ShoppingCart>
           </li>
           <li className="nav-item dropdown">
             <a
