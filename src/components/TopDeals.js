@@ -1,5 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Product from "./pages/Product";
 import "../assets/css/topDeals.css";
 
 const TopDeals = () => {
@@ -15,7 +18,6 @@ const TopDeals = () => {
         );
         // set state to top 5 products with highest discount percentage
         setProducts(sortedProducts.slice(0, 8));
-        console.log(sortedProducts);
       })
       .catch((error) => {
         console.log(error);
@@ -24,12 +26,16 @@ const TopDeals = () => {
 
   return (
     <div className="top-deals custom-container">
-      <h2 class="header-caption">Products at Slashed Prices</h2>
+      <h2 className="header-caption">Products at Slashed Prices</h2>
       <section className="topDeals-grid__container">
         {products.map((product) => (
           <div key={product.id} className="grid-item">
             <div className="topDeal-card">
-              <div>
+              <Link to={`/category/${product.category}/product/${product.id}`}>
+              <Routes>
+                <Route to={"/category/:category/product/:id"} element={<Product data={product} />}/>
+              </Routes>
+              <div className="home-product-image">
                 <img
                   src={product.images[0]}
                   alt={product.description}
@@ -45,6 +51,7 @@ const TopDeals = () => {
                   Price: £{Math.ceil(product.price)}
                 </p>
               </div>
+              </Link>
             </div>
           </div>
         ))}

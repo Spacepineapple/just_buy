@@ -1,33 +1,45 @@
+//Set initial state
 const initialState = {
-    products: [],
-  }
-
-  function generateId(state=initialState) {
-    return state.products.length++;
+        products: [],
 }
 
-  function cartReducer(state = initialState, action) {
+let currentId = 0;
+
+//Create function to generate id
+function generateId() {
+    return currentId++;
+}
+
+//Create function to handle cart actions
+function cartReducer(state = initialState, action) {
+    //Enable multiple actions based on message
     switch (action.type) {
-      case "cart/productAdded": {
-        return {
-            ...state,
-            products: [
-                ...state.products,
-                {
-                    id: generateId(),
-                    product: action.payload,
-                    count: 0,
-                }
-            ]
-        }    
-        }
-      case "cart/productRemoved": {
-        return {
-            ...state,
-            products: [
-                ...state.products.slice(0, action.payload),
-                ...state.products.slice(action.payload + 1)
+        //If product is added
+        case "cart/productAdded": {
+            let currentId = state.currentId;
+            return {
+                //Maintain existing state
+                ...state,
+                //Update products
+                products: [
+                    //Include existing products
+                    ...state.products,
+                    //Add additional product 
+                    {
+                        id: generateId(),
+                        product: action.payload,
+                        count: 0,
+                    }
                 ],
+            }    
+        }
+        //If product is removed
+        case "cart/productRemoved": {
+            return {
+                //Maintain existing state
+                ...state,
+                //Filter products to remove item with desired id
+                products: state.products.filter(item => item.id !== action.payload)
             }
         }
         case "cart/clearCart": {
@@ -35,9 +47,9 @@ const initialState = {
                 products: []
             }
         }
-      default:
-        return state
+        default:
+            return state
     }
-  }
+}
 
 export default cartReducer;

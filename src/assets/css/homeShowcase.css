@@ -25,7 +25,6 @@
 
 .home-card__img img {
   max-width: 100%;
-  height: auto;
   margin-bottom: 10px; /* add margin to bottom */
 }
 
@@ -53,6 +52,18 @@
 .home-card__link:active {
   color: #ff6600;
   border-bottom-color: #ff6600;
+}
+
+.topDeal-card__img {
+  height: 30vh;
+}
+
+.home-product-image {
+  height: 30vh;
+}
+
+.topDeal-card {
+  height: 50vh;
 }
 
 @media (max-width: 800px) {

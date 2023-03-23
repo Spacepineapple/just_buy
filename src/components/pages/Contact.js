@@ -34,23 +34,23 @@ function Contact() {
         <div className="contact-form contact-right col">
           <form>
             <div className="mb-3">
-              <label for="exampleInputName" className="form-label">
+              <label htmlFor="fullName" className="form-label">
                 Full Name
               </label>
               <input
-                type="fullName"
+                type="text"
                 className="form-control"
-                id="exampleInputName"
+                id="fullName"
               />
             </div>
             <div className="mb-3">
-              <label for="exampleInputEmail1" className="form-label">
+              <label htmlFor="email" className="form-label">
                 Email address
               </label>
               <input
                 type="email"
                 className="form-control"
-                id="exampleInputEmail1"
+                id="email"
                 aria-describedby="emailHelp"
               />
               <div id="emailHelp" className="form-text">
@@ -58,13 +58,13 @@ function Contact() {
               </div>
             </div>
             <div className="mb-3">
-              <label for="exampleTextarea" className="form-label">
+              <label htmlFor="textArea" className="form-label">
                 Comments
               </label>
               <textarea
                 class="form-control"
                 placeholder="Leave a comment here"
-                id="exampleTextarea"
+                id="textArea"
               ></textarea>
             </div>
             <button type="submit" className="btn btn-primary">

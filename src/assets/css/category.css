@@ -1,0 +1,17 @@
+.category-items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.category-item {
+  padding: 1rem;
+  background: #f5e8df;
+  text-transform: capitalize;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.shop-header__caption {
+  padding-top: 3rem;
+}
