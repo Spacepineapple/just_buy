@@ -68,7 +68,7 @@ export default function CategoryProducts() {
               >
                 <div>{title}</div>
                 <div>${price}</div>
-                <button onClick={() => handleAddToBasket({ name, images, price })}>
+                <button onClick={() => handleAddToBasket({ title, images, price })}>
                   Add to Basket
                 </button>
                 <Link to={`product/${id}`} key={"product "+ id +" link"}>

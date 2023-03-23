@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import Login from "./pages/Login";
-import store from "../store";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 

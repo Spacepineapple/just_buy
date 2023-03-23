@@ -1,6 +1,10 @@
 const initialState = {
     products: [],
   }
+
+  function generateId(state=initialState) {
+    return state.products.length++;
+}
   
   function cartReducer(state = initialState, action) {
     switch (action.type) {
@@ -10,7 +14,7 @@ const initialState = {
             products: [
                 ...state.products,
                 {
-                    id: "example",
+                    id: generateId(),
                     product: action.payload,
                 }
             ]
@@ -26,7 +30,7 @@ const initialState = {
             }
         }
         case "cart/productReduced": {
-            let reducedProduct = state.products.find(product => product.id === action.payload.id);
+            let reducedProduct = state.products.find(product => product.id === action.payload);
             let count = reducedProduct.count-=1;
             reducedProduct = { ...reducedProduct, count: count };
             return {
@@ -34,7 +38,7 @@ const initialState = {
             }
         }
         case "cart/productIncreased": {
-            let increasedProduct = state.products.find(product => product.id === action.payload.id);
+            let increasedProduct = state.products.find(product => product.id === action.payload);
             let count = increasedProduct.count+=1;
             increasedProduct = { ...increasedProduct, count: count};
             return {

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, {useEffect, useState } from "react";
 import {useParams} from "react-router-dom";
+import store from "../../store";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
 import CategoryProducts from "./CategoryProducts";
@@ -11,10 +12,12 @@ function Product({data}) {
     const [imgSrc, setImgSrc] = useState();
     let {id, category} = useParams();
 
-    const handleCart = (() => {
-        console.log("Added to cart!");
-    })
-
+    const handleAddToBasket = (item) => {
+        store.dispatch({ type: 'cart/productAdded', payload: item })
+        console.log(store.getState());
+        console.log(store);
+      };
+    
     const navigate = useNavigate();
 	const moveBack = () => {
 		navigate(-1);
@@ -52,7 +55,7 @@ function Product({data}) {
                             <p className="col-md-12 fs-4">{item.description}</p>
                             <p className="col-md-4 fs-4 d-flex justify-content-center">£{item.price}</p>
                             <p className="col-md-4 fs-4 d-flex justify-content-center">{item.rating}</p>
-                            <button type="button" className="btn btn-primary" onClick={handleCart}>Add to Cart</button>
+                            <button type="button" className="btn btn-primary" onClick={() => handleAddToBasket(item.title, item.images, item.description, item.price)}>Add to Cart</button>
                         </div>
                     </div>
                 </div>
