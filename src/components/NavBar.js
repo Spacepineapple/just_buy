@@ -1,9 +1,12 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import "../assets/css/navbar.css";
+import React, {useEffect, useState} from 'react';
 import Login from "./pages/Login";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import "../assets/css/navbar.css";
 
 function NavBar() {
+  const cartCount = useSelector(state => state.products.length);
+  
   return (
     <nav className="navbar navbar-expand-lg">
       <button
@@ -56,6 +59,17 @@ function NavBar() {
                 Shop
               </NavLink>
             </li>
+            <li className="nav-item">
+            <NavLink
+              to="/checkout"
+              end
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Checkout
+            </NavLink>
+          </li>
             <li className="nav-item">
               <NavLink
                 to="/about"
@@ -124,7 +138,7 @@ function NavBar() {
                 </svg>
                 <sup>
                   <span className="badge rounded-pill badge-notification bg-danger">
-                    1
+                  {`${cartCount}`}
                   </span>
                 </sup>
               </a>
