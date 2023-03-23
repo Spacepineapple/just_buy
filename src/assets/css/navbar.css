@@ -37,3 +37,50 @@ nav > .nav-link {
   align-items: center;
   gap: 0.25rem;
 }
+
+#burger-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 765px) {
+  .all-links {
+    display: None !important;
+  }
+  .navbar-toggler {
+    margin-bottom: 1rem;
+  }
+  .logo {
+    font-size: 3rem;
+  }
+}
+
+
+@media (min-width: 766px) {
+  .navbar-toggler {
+    display: None;
+    padding: 1rem !important
+  }
+
+  .carousel {
+    padding-top: 0 !important;
+  }
+}
+
+.visible-burger {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-colour);
+}
+
+.visible-burger li {
+  list-style-type: none;
+  font-size: 3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.invisible-burger {
+  display: none;
+}

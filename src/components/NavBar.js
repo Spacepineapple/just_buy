@@ -7,8 +7,11 @@ import "../assets/css/navbar.css";
 function NavBar() {
   //Get the live size of the cart from the store and update it when store state changes
   const cartCount = useSelector(state => state.products.length);
-  
+  //Create state handler for hamburger menu
+  const [burgerOpen, setBurgerOpen] = useState(false);
+
   return (
+    <>
     <nav className="navbar navbar-expand-lg">
       <button
         className="navbar-toggler"
@@ -18,11 +21,13 @@ function NavBar() {
         aria-controls="navbarTogglerDemo03"
         aria-expanded="false"
         aria-label="Toggle navigation"
+        //Toggle the hamburger menu on click
+        onClick={() => setBurgerOpen((status) => !status)}
       >
         <span className="navbar-toggler-icon"></span>
       </button>
       <div
-        className="collapse navbar-collapse navbar-collapse-custom"
+        className="collapse navbar-collapse navbar-collapse-custom all-links"
         id="navbarTogglerDemo03"
       >
         <div>
@@ -60,17 +65,6 @@ function NavBar() {
                 Shop
               </NavLink>
             </li>
-            <li className="nav-item">
-            <NavLink
-              to="/checkout"
-              end
-              className={({ isActive }) =>
-                isActive ? "nav-link active" : "nav-link"
-              }
-            >
-              Checkout
-            </NavLink>
-          </li>
             <li className="nav-item">
               <NavLink
                 to="/about"
@@ -174,7 +168,77 @@ function NavBar() {
         </div>
       </div>
     </nav>
-  );
+    <div id="burger-links" className={burgerOpen ? "visible-burger" :  "invisible-burger"}>
+      <ul id="burger-list">
+        <li className="page-link">
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive ? "link-active" : "nav-link"
+            }
+        >
+            <p className="logo">JustBuy</p>
+          </NavLink>
+        </li>
+        <li className="nav-item active">
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
+            Home
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="/shop"
+            end
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
+            Shop
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="/about"
+            end
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
+            About
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="/contact"
+            end
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
+            Contact
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="/checkout"
+            end
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
+            Checkout
+          </NavLink>
+        </li>
+      </ul>
+    </div>
+  </>);
 }
 
 export default NavBar;
