@@ -1,11 +1,7 @@
-import {loadState} from "./localStorage";
+const initialState = {
+    products: [],
+  }
 
-const initialState = loadState()
-
-  function generateId(state=initialState) {
-    return state.products.length++;
-    }
-  
   function cartReducer(state = initialState, action) {
     switch (action.type) {
       case "cart/productAdded": {
@@ -14,7 +10,7 @@ const initialState = loadState()
             products: [
                 ...state.products,
                 {
-                    id: generateId(),
+                    id: "example",
                     product: action.payload,
                 }
             ]
@@ -30,7 +26,7 @@ const initialState = loadState()
             }
         }
         case "cart/productReduced": {
-            let reducedProduct = state.products.find(product => product.id === action.payload);
+            let reducedProduct = state.products.find(product => product.id === action.payload.id);
             let count = reducedProduct.count-=1;
             reducedProduct = { ...reducedProduct, count: count };
             return {
@@ -38,16 +34,21 @@ const initialState = loadState()
             }
         }
         case "cart/productIncreased": {
-            let increasedProduct = state.products.find(product => product.id === action.payload);
+            let increasedProduct = state.products.find(product => product.id === action.payload.id);
             let count = increasedProduct.count+=1;
             increasedProduct = { ...increasedProduct, count: count};
             return {
                 ...state, products: [...state.products, increasedProduct]
             }
         }
+        case "cart/clearCart": {
+            return {
+                products: []
+            }
+        }
       default:
         return state
     }
   }
-  
+
 export default cartReducer;

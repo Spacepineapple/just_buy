@@ -1,7 +1,9 @@
 import React from "react";
+import store from "../../store";
 
 function ThankYou() {
     localStorage.clear();
+    store.dispatch({ type: 'cart/clearCart', payload: "" })
     return(
     <div>
         <h2>Thank you for your purchase</h2>
@@ -9,4 +11,4 @@ function ThankYou() {
     </div>)
 }
 
-export default ThankYou();
+export default ThankYou;

@@ -1,6 +1,8 @@
 import React from 'react';
 import store from "../../store";
 import BasketCard from "../BasketCard";
+import { BrowserRouter as Router, Route, Routes, useNavigate, Link } from "react-router-dom";
+import Thanks from "./Thanks";
 
 function Checkout() {
     let products = store.getState();
@@ -13,7 +15,12 @@ function Checkout() {
                 console.log(product);
                 return <BasketCard props={product.product}/>
             })}
+            <Link to={"/thanks"}>
+                <Routes>
+                    <Route path="/thanks" element={<Thanks />}/>
+                </Routes>
             <button>Checkout</button>
+            </Link>
         </div>
     )
 }

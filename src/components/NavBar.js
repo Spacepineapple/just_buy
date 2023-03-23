@@ -74,6 +74,18 @@ function NavBar() {
               Contact
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink
+              to="/checkout"
+              end
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Checkout
+            </NavLink>
+          </li>
+
         </ul>
         <ul className="nav justify-content-end">
           <li className="nav-item dropdown">
