@@ -1,3 +1,4 @@
+//Load data from local storage
 export const loadState = () => {
     try {
         const currentState = localStorage.getItem("state");
@@ -10,6 +11,7 @@ export const loadState = () => {
     }
 }
 
+//Save data to local storage
 export const saveState = (state) => {
     try {
         const currentState = JSON.stringify(state);

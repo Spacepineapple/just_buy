@@ -6,15 +6,8 @@ function Shipping() {
       <div className="container-fluid py-5">
         <h2 className="display-5 fw-bold">Track Your Order</h2>
         <p className="col-md-8 fs-4">
-          To track your order, simply type your order code and click the button!
+          Order tracking is carried out by our trusted delivery partners. To track your order, please follow the instructions in your confirmation email.
         </p>
-        <input
-          type="text"
-          id="orderNumber"
-          name="orderNumber"
-          placeholder="Enter your order number"
-        />
-        <button className="btn btn-primary btn-lg">Track My Order</button>
       </div>
     </div>
   );

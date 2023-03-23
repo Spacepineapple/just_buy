@@ -15,9 +15,39 @@ function Footer() {
             <div className="card footer-cell">
               <div className="card-header">Products</div>
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">Category One</li>
-                <li className="list-group-item">Category Two</li>
-                <li className="list-group-item">Category Three</li>
+                <li className="list-group-item">
+                  <NavLink
+                    to="/category/fragrances"
+                    end
+                    className={({ isActive }) =>
+                      isActive ? "link-active" : "nav-link"
+                  }
+                  >
+                    Fragrances
+                    </NavLink>
+                </li>
+                <li className="list-group-item">
+                  <NavLink
+                  to="/category/furniture"
+                  end
+                  className={({ isActive }) =>
+                    isActive ? "link-active" : "nav-link"
+                }
+                >
+                  Furniture
+                  </NavLink>
+                </li>
+                <li className="list-group-item">
+                  <NavLink
+                  to="/category/groceries"
+                  end
+                  className={({ isActive }) =>
+                    isActive ? "link-active" : "nav-link"
+                }
+                >
+                  Groceries
+                </NavLink>
+                </li>
               </ul>
             </div>
             <div className="card footer-cell">

@@ -6,7 +6,7 @@ export default function ShopPage() {
     <div className="shop-page custom-container">
       <Category />
 
-      <section class="sales">
+      <section className="sales">
         <TopDeals />
       </section>
     </div>
