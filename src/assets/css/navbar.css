@@ -66,6 +66,11 @@ nav > .nav-link {
   .carousel {
     padding-top: 0 !important;
   }
+
+  .burger-list {
+    display: none;
+  }
+
 }
 
 .visible-burger {
