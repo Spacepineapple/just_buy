@@ -125,7 +125,13 @@ function NavBar() {
               </div>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink 
+                to="/checkout" 
+                end
+                className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+                }
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -141,7 +147,7 @@ function NavBar() {
                   {`${cartCount}`}
                   </span>
                 </sup>
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item dropdown">
               <a
