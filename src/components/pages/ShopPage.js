@@ -3,7 +3,7 @@ import CardItem from "./CardItem";
 
 export default function ShopPage() {
   return (
-    <div className="shop-page">
+    <div className="shop-page custom-container">
       <Category />
 
       <section class="sales">

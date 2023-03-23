@@ -14,6 +14,7 @@ import "./index.css";
 import "./assets/css/shopPage.css";
 import "./assets/css/carousel.css";
 import "./assets/css/homeShowcase.css";
+import "./assets/css/footer.css";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

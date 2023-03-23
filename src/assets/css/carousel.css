@@ -1,16 +1,41 @@
+.carousel {
+  padding-top: 0 !important;
+}
+
 .carousel-item img {
   object-fit: cover;
   object-position: center;
   overflow: hidden;
-  height: 50vh;
+  height: 25vh;
 }
 
 .carousel-item::before {
   content: "";
-  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1));
   display: block;
   position: absolute;
   top: 0;
   width: 100vw;
-  height: 50vh;
+  height: 25vh;
+}
+
+@media only screen and (min-width: 768px) {
+  .carousel-item img {
+    height: 35vh;
+  }
+
+  .carousel-item::before {
+    content: "";
+    height: 35vh;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .carousel-item img {
+    height: 50vh;
+  }
+
+  .carousel-item::before {
+    height: 50vh;
+  }
 }

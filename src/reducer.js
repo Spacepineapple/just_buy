@@ -5,15 +5,26 @@ const initialState = {
   function cartReducer(state = initialState, action) {
     switch (action.type) {
       case "cart/productAdded": {
-        return {
-            ...state,
-            products: [
-                ...state.products,
-                {
-                    id: "example",
-                    product: action.payload,
-                }
-            ]
+        let addedProduct = state.products.find(product => product.product.title === action.payload.title);
+        if (addedProduct === undefined) {
+            return {
+                ...state,
+                products: [
+                    ...state.products,
+                    {
+                        id: "example",
+                        product: action.payload,
+                        count: 0,
+                    }
+                ]
+            }    
+        } else {
+            console.log("Activated")
+            let count = addedProduct.count+=1;
+            addedProduct = { ...addedProduct, count: count};
+            return {
+                ...state, products: [...state.products, addedProduct]
+            }
         }
       }
       case "cart/productRemoved": {
