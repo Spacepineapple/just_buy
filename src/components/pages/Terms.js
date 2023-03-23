@@ -10,10 +10,7 @@ function Terms() {
         guarantee. All products, images, reviews and prices are completely fake.
       </p>
       <div className="terms-area">
-        <h3>
-          <strong>Terms and Conditions</strong>
-        </h3>
-        <p>Welcome to JustBuy!</p>
+        <h4>Welcome to JustBuy!</h4>
         <p>
           These terms and conditions outline the rules and regulations for the
           use of the JustBuy website. By accessing this website we assume you

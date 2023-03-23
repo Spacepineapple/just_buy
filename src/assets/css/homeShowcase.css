@@ -36,6 +36,7 @@
   transition: color 0.2s ease-in-out;
   font-weight: bold;
   padding-bottom: 5px;
+  font-size: 1rem;
 }
 
 .home-card__link a {
@@ -44,8 +45,7 @@
 
 .home-card__link:focus,
 .home-card__link:hover {
-  color: #004499;
-  border-bottom-color: #004499;
+  color: #111111 !important;
   outline: none;
   text-decoration: underline;
 }

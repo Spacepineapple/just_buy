@@ -45,7 +45,7 @@ export default function HomeCard() {
       </div>
       <div className="grid-item">
         <div className="home-card">
-          <div className="home-card__header">Tech products under £50</div>
+          <div className="home-card__header">Products under £50</div>
           <div className="home-card__img">
             <img
               src="https://images.unsplash.com/photo-1591785944213-c8b5b7a75ec6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
