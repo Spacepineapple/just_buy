@@ -23,7 +23,7 @@ const TopDeals = () => {
   }, []);
 
   return (
-    <div className="top-deals">
+    <div className="top-deals custom-container">
       <h2 class="header-caption">Products at Slashed Prices</h2>
       <section className="topDeals-grid__container">
         {products.map((product) => (

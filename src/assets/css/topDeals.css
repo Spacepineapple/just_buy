@@ -1,8 +1,7 @@
 .topDeals-grid__container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 1.25rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 1rem;
 }
 
 .topDeal-card {
@@ -14,13 +13,14 @@
   padding: 1rem;
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
+  margin-bottom: 1.25rem;
 }
 
 .topDeal-card__header {
   font-size: 1rem;
   font-weight: 600;
   text-align: left;
-  margin-bottom: 0.5rem; /* add margin to bottom */
+  margin-bottom: 0.5rem;
 }
 
 .topDeal-card__img {
@@ -53,10 +53,12 @@
   border-bottom-color: #ff6600;
 }
 
-@media (max-width: 800px) {
+@media only screen and (min-width: 768px) and (max-width: 900px) {
   .topDeals-grid__container {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1rem;
   }
 
   .topDeals-card__header {
@@ -66,9 +68,11 @@
   }
 }
 
-@media (max-width: 500px) {
+@media only screen and (min-width: 901px) {
   .topDeals-grid__container {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1.25rem;
   }
 }
