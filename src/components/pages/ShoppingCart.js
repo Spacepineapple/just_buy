@@ -1,8 +1,12 @@
 import React from 'react';
+import items from "../../items.json"
+
+console.log(items)
 
 export default function ShoppingCart() {
 
     return(<>
+   
         <div className="container"> 
 </div>
 
@@ -30,20 +34,29 @@ export default function ShoppingCart() {
             </tr>
           </thead>
           <tbody>
-            <tr>
+          {items.map(item => (
+      item.inCart ? (
+        <tr>
+              
               <td className="w-25">
-                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" className="img-fluid img-thumbnail" alt="Sheep"/>
+                <img src={item.img}/>
               </td>
-              <td>Vans Sk8-Hi MTE Shoes</td>
+              <td>{item.title}</td>
               <td>89$</td>
-              <td className="qty"><input type="text" className="form-control" id="input1" value="2"/></td>
+              <td className="qty"><input type="text" className="form-control" id="input1" /></td>
               <td>178$</td>
               <td>
                 <a href="#" className="btn btn-danger btn-sm">
+                  Remove
                   <i className="fa fa-times"></i>
                 </a>
               </td>
-            </tr>
+            </tr>) : <></>
+
+
+      
+    ))}
+            
           </tbody>
         </table> 
         <div className="d-flex justify-content-end">

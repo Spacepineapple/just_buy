@@ -1,12 +1,18 @@
 import React from 'react';
 import {useState} from 'react'
+import { identity } from 'underscore';
 
 
 function AboutUs() {
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState();
 
-    function handleClick() {
-        setActive(!active);
+    function handleClick(id) {
+
+        if(id===active){
+           return setActive(null)
+        }
+        setActive(id);
+
       }
 
     return(<div className="row">
@@ -14,19 +20,22 @@ function AboutUs() {
         <div className="card mt-5" style={{width: "18rem"}}>
     <sup>
         <span className="badge pill badge-notification bg-warning">
-        4
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
         <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
         </svg>
+        4
         </span>
     </sup>
+    
+    
+
     <img className="card-img-top" src="https://img.ltwebstatic.com/images3_pi/2022/01/22/1642821685e3978a1124996bdfa4f250d502fb4f17.webp" alt="Card image cap"/>
     <div className="card-body">
         <h5 className="card-title">T-shirt</h5>
         <p className="card-text">white basic tshirt</p>
         <h6 className = "mt-2">18£</h6>
         <div className="card text-center">
-            <a href="#" className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={handleClick}>{ active ? "Remove" : "Add to your Cart"}</a>
+            <a href="#"  className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={() => handleClick(0)}>{ active === 0 ? "Remove" :  "Add to your Cart"}</a>
         </div>
     </div>
 </div>
@@ -48,7 +57,7 @@ function AboutUs() {
         <p className="card-text">black basic tshirt</p>
         <h6 className = "mt-2">12£</h6>
         <div className="card text-center">
-        <a href="#" className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={handleClick}>{ active ? "Remove" : "Add to your Cart"}</a>
+        <a href="#"  className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={() => handleClick(1)}>{ active === 1 ? "Remove" :  "Add to your Cart"}</a>
         </div>
     </div>
 </div>
@@ -70,7 +79,7 @@ function AboutUs() {
         <p className="card-text">purple flower tshirt</p>
         <h6 className = "mt-2">20£</h6>
         <div className="card text-center">
-        <a href="#" className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={handleClick}>{ active ? "Remove" : "Add to your Cart"}</a>
+        <a href="#"  className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={() => handleClick(2)}>{ active === 2 ? "Remove" :  "Add to your Cart"}</a>
         </div>
     </div>
 </div>
@@ -91,7 +100,7 @@ function AboutUs() {
         <p className="card-text">green tshirt</p>
         <h6 className = "mt-2">14£</h6>
         <div className="card text-center">
-        <a href="#" className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={handleClick}>{ active ? "Remove" : "Add to your Cart"}</a>
+        <a href="#"  className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={() => handleClick(3)}>{ active === 3 ? "Remove" :  "Add to your Cart"}</a>
         </div>
     </div>
 </div>
@@ -111,7 +120,7 @@ function AboutUs() {
         <p className="card-text">white basic tshirt</p>
         <h6 className = "mt-2">18£</h6>
         <div className="card text-center">
-        <a href="#" className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={handleClick}>{ active ? "Remove" : "Add to your Cart"}</a>
+        <a href="#"  className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={() => handleClick(4)}>{ active === 4 ? "Remove" :  "Add to your Cart"}</a>
         </div>
     </div>
 </div>
