@@ -1,52 +1,80 @@
-import React from 'react';
+import React from "react";
 
 function Contact() {
-    return (
-        <div className="container">
-            <h2>Contact Us</h2>
-            <p>We love to hear your feedback and we love answering your questions! Check out our FAQ for some of the most common questions we're asked by customers. If you still have a question or you need to get in touch with us, you can use any of the methods below:</p>
-            <ul>
-                <li>Phone: +8891794797972</li>
-                <li>Email: carrier.pigeon@justbuy.buy</li>
-                <li>Post: Freepost, JustBuy, 9999 Gumdrop Lane, The Moon, MO00 0ON</li>
-            </ul>
-            <p>Or alternatively, use our contact form:</p>
-            <div className="contact-form">
-                <form>
-                    <fieldset>
-                        <legend>
-                            Add User
-                        </legend>
-                        <div>
-                            <label htmlFor="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName"/>
-                        </div>
-                        <div>
-                            <label htmlFor="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName"/>
-                        </div>
-                        <div>
-                            <label htmlFor="email">Email</label>
-                            <input type="email" id="email" name="email"/>
-                        </div>
-                        <div>
-                            <label htmlFor="comments">Comments:</label>
-                            <textarea id="comments" name="comments" rows="5" columns="10">
-
-                            </textarea>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="terms" id="terms"/>
-                            <label htmlFor="terms">I agree to the terms and conditions</label>
-                        </div>
-                        <div>
-                            <button>Submit</button>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+  return (
+    <div className="custom-container contact">
+      <div className="contact-hero row py-4">
+        <h2 className="contact-heading">Contact Us</h2>
+        <div className="contact-left col-7">
+          <p className="contact-text">
+            We love to hear your feedback and we love answering your questions!
+            Check out our FAQ for some of the most common questions we're asked
+            by customers.{" "}
+          </p>
+          <p className="contact-text">
+            If you still have a question or you need to get in touch with us,
+            you can use any of the methods below. Or alternatively, fill our
+            contact form and we promise to get back to you within two working
+            days.
+          </p>
+          <ul className="contact-details">
+            <li>
+              <span>Phone:</span> +8891794797972
+            </li>
+            <li>
+              <span>Email:</span> carrier.pigeon@justbuy.buy
+            </li>
+            <li>
+              <span>Post:</span> Freepost, JustBuy, 99 Gumdrop Lane, The Moon,
+              M01 0ON
+            </li>
+          </ul>
         </div>
-    )
+
+        <div className="contact-form contact-right col">
+          <form>
+            <div className="mb-3">
+              <label htmlFor="fullName" className="form-label">
+                Full Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="fullName"
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Email address
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" className="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+            <div className="mb-3">
+              <label htmlFor="textArea" className="form-label">
+                Comments
+              </label>
+              <textarea
+                class="form-control"
+                placeholder="Leave a comment here"
+                id="textArea"
+              ></textarea>
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Contact;

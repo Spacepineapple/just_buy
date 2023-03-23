@@ -67,6 +67,50 @@ nav {
   padding: 0 0.75rem !important;
 }
 
+.contact-hero {
+  margin: 3.5rem 0;
+}
+
+.contact-details li > span {
+  color: #f56400;
+  font-weight: bold !important;
+  margin-right: 0.5rem !important;
+}
+
+.about-hero {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.about-hero__heading,
+.contact-heading {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: left;
+  margin-bottom: 1rem !important;
+  color: #f56400;
+}
+
+.about-hero__text,
+.contact-text {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.contact-details {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  list-style-type: none;
+  padding-left: 0 !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .contact-hero {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
 /* Media queries for responsive typography */
 @media only screen and (min-width: 768px) {
   :root {
@@ -89,6 +133,45 @@ nav {
     max-width: 750px !important;
     margin: 0 auto !important;
     padding: 0 !important;
+  }
+
+  .about-hero,
+  .contact-hero {
+    margin: 3.5rem 0;
+  }
+
+  .about-hero__heading,
+  .contact-heading {
+    font-weight: bold;
+  }
+
+  .about-hero__text,
+  .contact-text {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-card {
+    padding: 20px 20px 30px;
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    white-space: normal;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-card > h2 {
+    font-size: 1.5rem;
+    color: #f56400;
+  }
+
+  .about-card__text {
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: #2f3033;
+    padding-bottom: 2rem;
+    flex: 1 1 100%;
   }
 }
 
@@ -113,4 +196,14 @@ nav {
 
 button {
   background-color: var(--primary-color) !important;
+  border: none !important;
+}
+
+.accordion-item button {
+  background-color: var(--secondary-color) !important;
+  font-weight: bold !important;
+}
+
+.accordion-body {
+  background-color: var(--secondary-color) !important;
 }
