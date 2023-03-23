@@ -9,24 +9,14 @@ export default function Form(){
     const [pwd2, setPwd2] = useState('');
     
     const [signedIn, setSignedIn] = useState(false);
-
-  const handleSubmit = async (e) => {
+  
+    const handleInputChange = async (e) => {
         e.preventDefault();
         setFirstName(firstName);
         setSurname(surname);
         setEmail(email);
         setPwd(pwd);
         setPwd2(pwd2);
-        setSignedIn(false);
-    }
-  
-    const handleInputChange = async (e) => {
-        e.preventDefault();
-        setFirstName("");
-        setSurname("");
-        setEmail("");
-        setPwd("");
-        setPwd2("");
         setSignedIn(true);
         }
 
@@ -35,14 +25,24 @@ export default function Form(){
         {signedIn ? (
 
 <div className="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
-<div className="modal-dialog" role="document">
-    <div className="modal-content"> 
-        <div className="modal-header">
-            <h5 className="modal-title" id="signUpLabel">Register with us</h5>
-            <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div></div></div></div>
+  <div className="modal-dialog text-center" role="document">
+    <div className="modal-content">
+      <div className="modal-header auto-mx">
+        <h1 className="modal-title text-center" id="exampleModalLabel">Welcome {firstName}</h1>
+        <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div className="modal-body text-center">
+        <h4>You are now registered with JustBuy!</h4>
+        <h6 className="mt-3">Confirm your email and you will be ready for shopping</h6>
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
         
         ) : (
 <div className="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
