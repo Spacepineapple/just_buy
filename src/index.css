@@ -1,101 +1,209 @@
-.home_page {
-  max-width: 1200px !important;
-  margin: 0 auto;
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap");
+
+/* Variables */
+:root {
+  --primary-color: #f56400;
+  --secondary-color: #f5e8df;
+  --background-color: #efefef;
+  --text-color: #111111;
+  --accent-color: #1c1c1c;
+
+  /* Typography variables */
+  --body-font: "Open Sans", sans-serif;
+  --heading-font: "Merriweather", serif;
+  --body-font-size: 14px;
+  --body-line-height: 1.5;
 }
 
-.card-link {
-  color: #ec6e4c;
+/* Global styles */
+html {
+  font-size: 14px;
+  color: var(--text-color);
 }
 
-.card-link h2 {
-  color: black;
+body {
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  line-height: var(--body-line-height);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+a {
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
-.footer-cell li {
+/* a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+section {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+nav {
+  font-family: var(--heading-font);
+}
+
+.custom-container {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 0.75rem !important;
+}
+
+.contact-hero {
+  margin: 3.5rem 0;
+}
+
+.contact-details li > span {
+  color: #f56400;
+  font-weight: bold !important;
+  margin-right: 0.5rem !important;
+}
+
+.about-hero {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.about-hero__heading,
+.contact-heading {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: left;
+  margin-bottom: 1rem !important;
+  color: #f56400;
+}
+
+.about-hero__text,
+.contact-text {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.contact-details {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
   list-style-type: none;
+  padding-left: 0 !important;
 }
 
-.footer-upper {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
+@media only screen and (max-width: 767px) {
+  .contact-hero {
+    display: flex !important;
+    flex-direction: column !important;
+  }
 }
 
-.footer-lower {
-  display: flex;
-}
-
-.container-fluid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-button {
-  background-color: #0072C6 !important;
-}
-
-/* Medium screens (tablets and small desktops) */
+/* Media queries for responsive typography */
 @media only screen and (min-width: 768px) {
-  .footer-upper, .footer-lower {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-  .footer-lower {
-    width: 100%;
-    justify-content: space-evenly;
-    flex-direction: row;
-  }
-  .footer-upper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  :root {
+    --body-font-size: 16px;
+    --body-line-height: 1.5;
   }
 
-  .footer-cards {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .custom-container {
+    width: 100% !important;
+    max-width: 750px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .about-hero,
+  .contact-hero {
+    margin: 3.5rem 0;
+  }
+
+  .about-hero__heading,
+  .contact-heading {
+    font-weight: bold;
+  }
+
+  .about-hero__text,
+  .contact-text {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-card {
+    padding: 20px 20px 30px;
+    flex: 1 1 100%;
     display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    white-space: normal;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-card > h2 {
+    font-size: 1.5rem;
+    color: #f56400;
+  }
+
+  .about-card__text {
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: #2f3033;
+    padding-bottom: 2rem;
+    flex: 1 1 100%;
   }
 }
 
-/* Large screens (large desktops and high-resolution displays) */
-@media only screen and (min-width: 1200px) {  
-  .footer-lower {
-    display: flex;
-    width: 100%;
+@media only screen and (min-width: 1200px) {
+  :root {
+    --body-font-size: 18px;
+    --body-line-height: 1.6;
   }
 
-  .footer-cards {
-    display: flex;
-    justify-content: space-evenly;
-    width: 75%;
-  }
-
-  .footer-cell {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 15%;
-    border: none;
-  }
-  
-  .footer-upper,
-  .footer-lower {
-    margin-left: 10%;
-    margin-right: 10%;
-    justify-content: space-evenly;
-    flex-direction: row;
+  .custom-container {
+    width: 100% !important;
+    max-width: 1024px !important;
+    margin: 0 auto !important;
   }
 
   .container-fluid {
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+}
 
+button {
+  background-color: var(--primary-color) !important;
+  border: none !important;
+}
+
+.accordion-item button {
+  background-color: var(--secondary-color) !important;
+  font-weight: bold !important;
+}
+
+.accordion-body {
+  background-color: var(--secondary-color) !important;
 }
