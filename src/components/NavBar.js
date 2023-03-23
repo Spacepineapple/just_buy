@@ -16,21 +16,22 @@ function NavBar() {
       <button
         className="navbar-toggler"
         type="button"
-        data-toggle="collapse"
-        data-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarNav"
         aria-expanded="false"
         aria-label="Toggle navigation"
         //Toggle the hamburger menu on click
         onClick={() => setBurgerOpen((status) => !status)}
       >
-        <span className="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span> 
       </button>
+      <a className="logo nav-bar-brand">JustBuy</a>
       <div
-        className="collapse navbar-collapse navbar-collapse-custom all-links"
+        className="collapse navbar-collapse all-links"
         id="navbarTogglerDemo03"
       >
-        <div>
+        <div  className="navbar-nav">
           <NavLink
             to="/"
             end
@@ -38,11 +39,11 @@ function NavBar() {
               isActive ? "link-active" : "nav-link"
             }
           >
-            <p className="logo">JustBuy</p>
+            
           </NavLink>
         </div>
-        <div className="nav-links__middle">
-          <ul className="nav mx-auto mr-auto mt-2 mt-lg-0 justify-content-start">
+        <div className="nav-bar-nav nav-links__middle">
+          <ul className="nav-bar-nav mx-auto mr-auto mt-2 mt-lg-0 justify-content-start">
             <li className="nav-item active">
               <NavLink
                 to="/"
@@ -90,8 +91,8 @@ function NavBar() {
           </ul>
         </div>
         <div className="nav-links__right">
-          <ul className="nav justify-content-end">
-            <li className="nav-item dropdown">
+          <ul className=" justify-content-end">
+            <li className=" dropdown">
               <a
                 className="nav-link dopdown-toggle"
                 href="#"

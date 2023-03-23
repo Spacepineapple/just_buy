@@ -11,6 +11,7 @@ function Checkout() {
     return (
         <div className="custom-container">
             <h2>Checkout</h2>
+            
             <p>See your basket below, make any changes you wish to and then use the Checkout button to checkout!</p>
             {/*For each product in the cart, create a basketcard*/}
             {products.map(product => {
@@ -23,6 +24,7 @@ function Checkout() {
                 </Routes>
             <button>Checkout</button>
             </Link>
+            
         </div>
     )
 }
