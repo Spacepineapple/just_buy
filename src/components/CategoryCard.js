@@ -5,6 +5,10 @@ export default function CategoryCard({ name, onClick }) {
   // console.log(name);
   return (
     // Render a card with an image and the category name
+    <Link to={`/category/${name}`} element={<CategoryProducts />}>
+    <Routes>
+      <Route to={"/category/:name"}/>
+    </Routes>
     <li
       style={{
         display: "inline-block",
@@ -14,9 +18,9 @@ export default function CategoryCard({ name, onClick }) {
         marginRight: "10px",
         cursor: "pointer",
       }}
-      onClick={onClick}
     >
       {name}
     </li>
+    </Link>
   );
 }

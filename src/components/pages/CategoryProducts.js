@@ -11,33 +11,12 @@ export default function CategoryProducts() {
   const { name } = useParams();
   const [products, setProducts] = useState([]);
 
-  const getCategoryQuery = (name) => {
-    console.log(name);
-    switch (name) {
-      case "tech":
-        return "smartphones&category=laptops";
-      case "home":
-        return "home-decoration&category=furniture&category=lighting";
-      case "clothing":
-        return "womens-dresses&category=tops&category=mens-shirts";
-      case "accessories":
-        return "watches&category=jewellery&category=sunglasses&category=bags";
-      case "beauty":
-        return "skincare&category=fragrances";
-      case "groceries":
-        return "groceries";
-      default:
-        return "";
-    }
-  };
-
   useEffect (() => {
-    const query = getCategoryQuery(name);
     axios
-      .get(`https://dummyjson.com/products?category=${query}`)
+      .get(`https://dummyjson.com/products/category/${name}`)
       .then(({ data }) => {
         setProducts(data);
-        console.log(query);
+        console.log(name);
         console.log(name);
       });
   }, [name]);
