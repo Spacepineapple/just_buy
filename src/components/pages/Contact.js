@@ -18,26 +18,26 @@ function Contact() {
                             Add User
                         </legend>
                         <div>
-                            <label for="firstName">First Name</label>
+                            <label htmlFor="firstName">First Name</label>
                             <input type="text" id="firstName" name="firstName"/>
                         </div>
                         <div>
-                            <label for="lastName">Last Name</label>
+                            <label htmlFor="lastName">Last Name</label>
                             <input type="text" id="lastName" name="lastName"/>
                         </div>
                         <div>
-                            <label for="email">Email</label>
+                            <label htmlFor="email">Email</label>
                             <input type="email" id="email" name="email"/>
                         </div>
                         <div>
-                            <label for="comments">Comments:</label>
+                            <label htmlFor="comments">Comments:</label>
                             <textarea id="comments" name="comments" rows="5" columns="10">
 
                             </textarea>
                         </div>
                         <div>
                             <input type="checkbox" name="terms" id="terms"/>
-                            <label for="terms">I agree to the terms and conditions</label>
+                            <label htmlFor="terms">I agree to the terms and conditions</label>
                         </div>
                         <div>
                             <button>Submit</button>

@@ -9,16 +9,16 @@ function removeItem(id) {
 
 function BasketCard({props}) {
     return (
-        <div class="card mb-3" styles="max-width: 540px;">
-        <div class="row g-0">
-            <div class="col-md-4">
-            {<img src={props.product.images[0]} class="img-fluid rounded-start" alt={props.description}/>}
+        <div className="card mb-3" styles="max-width: 540px;">
+        <div className="row g-0">
+            <div className="col-md-4">
+            {<img src={props.product.images[0]} className="img-fluid rounded-start" alt={props.description}/>}
             </div>
-            <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">{props.product.title}</h5>
-                <p class="card-text">{props.product.description}</p>
-                <p class="card-text">{props.product.price}</p>
+            <div className="col-md-8">
+            <div className="card-body">
+                <h5 className="card-title">{props.product.title}</h5>
+                <p className="card-text">{props.product.description}</p>
+                <p className="card-text">{props.product.price}</p>
                 <button onClick={()=>removeItem(props.id)}>Remove</button>
             </div>
             </div>

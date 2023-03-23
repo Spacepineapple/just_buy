@@ -18,7 +18,6 @@ function ThankYou() {
           .get("https://dummyjson.com/quotes/random")
           .then(({ data }) => {
             setQuote(data);
-            console.log(data);
           });
       };
     

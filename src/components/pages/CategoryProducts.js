@@ -26,7 +26,6 @@ export default function CategoryProducts() {
   const handleAddToBasket = (product) => {
     // Send a message to the store to add a product to the cart
     store.dispatch({ type: 'cart/productAdded', payload: product })
-    console.log(store.getState());
   };
 
   //Display loading before state change has occurred

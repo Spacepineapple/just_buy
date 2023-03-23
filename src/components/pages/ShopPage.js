@@ -6,8 +6,8 @@ export default function ShopPage() {
     <div className="shop-page custom-container">
       <Category />
 
-      <section class="sales">
-        <h2 class="header-caption">Products at Slashed Prices</h2>
+      <section className="sales">
+        <h2 className="header-caption">Products at Slashed Prices</h2>
         {/* <CardItem /> */}
       </section>
     </div>

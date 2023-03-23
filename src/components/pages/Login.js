@@ -6,16 +6,16 @@ export default function LoginDropMenu(){
 <div className="dropdown-menu">
     <form className="px-4 py-3">
         <div className="form-group">
-            <label for="exampleDropdownFormEmail1">Email address</label>
+            <label htmlFor="exampleDropdownFormEmail1">Email address</label>
             <input type="email" className="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com"/>
         </div>
         <div className="form-group">
-            <label for="exampleDropdownFormPassword1">Password</label>
+            <label htmlFor="exampleDropdownFormPassword1">Password</label>
             <input type="password" className="form-control" id="exampleDropdownFormPassword1" placeholder="Password"/>
         </div>
         <div className="form-check">
             <input type="checkbox" className="form-check-input" id="dropdownCheck"/>
-            <label className="form-check-label" for="dropdownCheck">
+            <label className="form-check-label" htmlFor="dropdownCheck">
         Remember me
             </label>
         </div>
@@ -25,7 +25,7 @@ export default function LoginDropMenu(){
     <a className="dropdown-item" data-bs-toggle="modal" data-bs-target="#signUp" href="#">Sign up</a>
 </div>
 
-<div className="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
+<div className="modal fade" id="signUp" tabIndex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
     <div className="modal-dialog" role="document">
         <div className="modal-content">
             <div className="modal-header">
@@ -37,24 +37,24 @@ export default function LoginDropMenu(){
             <div className="modal-body">
             <form>
             <div className="form-group mb-2">
-    <label for="exampleInputEmail1">First Name</label>
+    <label htmlFor="exampleInputEmail1">First Name</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter first Name"/>
   </div>
   <div className="form-group mb-2">
-    <label for="exampleInputEmail1">Surname</label>
+    <label htmlFor="exampleInputEmail1">Surname</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Surname"/>
   </div>
   <div className="form-group mb-2">
-    <label for="exampleInputEmail1">Email address</label>
+    <label htmlFor="exampleInputEmail1">Email address</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
     <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div className="form-group mb-2">
-    <label for="exampleInputPassword1">Password</label>
+    <label htmlFor="exampleInputPassword1">Password</label>
     <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
   </div>
   <div className="form-group mb-2">
-    <label for="exampleInputPassword1">Confirm Password</label>
+    <label htmlFor="exampleInputPassword1">Confirm Password</label>
     <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
   </div>
 </form>

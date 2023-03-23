@@ -10,11 +10,11 @@ function FAQ() {
         below. Still got a question? Find out more about how to contact us on
         our contact page!
       </p>
-      <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="flush-headingOne">
+      <div className="accordion accordion-flush" id="accordionFlushExample">
+        <div className="accordion-item">
+          <h3 className="accordion-header" id="flush-headingOne">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseOne"
@@ -26,21 +26,21 @@ function FAQ() {
           </h3>
           <div
             id="flush-collapseOne"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="flush-headingOne"
             data-bs-parent="#accordionFlushExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
               Just Buy is the e-commerce site you're on just now! We think
               buying products online doesn't need to be complicated so we took
               all the complexity out. So no need to stress -- just buy!
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="flush-headingTwo">
+        <div className="accordion-item">
+          <h3 className="accordion-header" id="flush-headingTwo">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseTwo"
@@ -52,21 +52,21 @@ function FAQ() {
           </h3>
           <div
             id="flush-collapseTwo"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="flush-headingTwo"
             data-bs-parent="#accordionFlushExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
               We sell any of the products you see on this site! For specific
               ideas, why not try using the shop button in the nav bar above or
               looking through the product categories in our footer below?
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="flush-headingThree">
+        <div className="accordion-item">
+          <h3 className="accordion-header" id="flush-headingThree">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseThree"
@@ -78,21 +78,21 @@ function FAQ() {
           </h3>
           <div
             id="flush-collapseThree"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="flush-headingThree"
             data-bs-parent="#accordionFlushExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
               There are three things that set us apart from others: the ease
               with which you can purchase our products, the quality of our range
               and the sheer variety of delivery options!
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="flush-headingFour">
+        <div className="accordion-item">
+          <h3 className="accordion-header" id="flush-headingFour">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseFour"
@@ -104,11 +104,11 @@ function FAQ() {
           </h3>
           <div
             id="flush-collapseFour"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="flush-headingFour"
             data-bs-parent="#accordionFlushExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
               We'll deliver products in pretty much any way you want! From
               rocket ships to carrier pigeons, we want our customers to be able
               to choose what works best for them. Note that not all delivery
@@ -116,10 +116,10 @@ function FAQ() {
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="flush-headingFive">
+        <div className="accordion-item">
+          <h3 className="accordion-header" id="flush-headingFive">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseFive"
@@ -131,11 +131,11 @@ function FAQ() {
           </h3>
           <div
             id="flush-collapseFive"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="flush-headingFive"
             data-bs-parent="#accordionFlushExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
               Of course! As long as it's within 35 days of purchase, the product
               is undamaged and you have your proof of purchase or confirmation
               email.
