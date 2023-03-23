@@ -123,7 +123,6 @@ function NavBar() {
                 ></input>
               </div>
             </li>
-
             <li className="nav-item">
               <a className="nav-link" href="#">
                 <svg
