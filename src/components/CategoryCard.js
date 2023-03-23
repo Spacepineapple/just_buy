@@ -1,8 +1,7 @@
 import { Link, Route, Routes } from "react-router-dom";
 import CategoryProducts from "./pages/CategoryProducts";
 
-export default function CategoryCard({ name, products, image }) {
-  console.log(products);
+export default function CategoryCard({ name, image }) {
   return (
     <Link to={`/category/${name}`} className={`category-card`}>
       <Routes>

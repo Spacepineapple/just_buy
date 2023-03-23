@@ -1,33 +1,48 @@
 import axios from "axios";
 import React, {useEffect, useState } from "react";
 import {useParams} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
+import CategoryProducts from "./CategoryProducts";
 
 
 function Product({data}) {
     const [item, setItem] = useState([]);
     const [imgSrc, setImgSrc] = useState();
-    let {id} = useParams();
+    let {id, category} = useParams();
 
     const handleCart = (() => {
         console.log("Added to cart!");
     })
 
+    const navigate = useNavigate();
+	const moveBack = () => {
+		navigate(-1);
+	}
+    let productData = undefined;
     useEffect (() => {
-        axios
-          .get(`https://dummyjson.com/products/${id}`)
-          .then(({ data }) => {
+        if (productData) {
             setItem(data);
-            setImgSrc(data.images[0]);
-            console.log(data);
-            console.log(id);
-          });
-      }, [id]);
+            setImgSrc(data.images[0])
+            console.log("Used saved data");
+        } else {
+            axios
+            .get(`https://dummyjson.com/products/${id}`)
+            .then(({ data }) => {
+              productData = data;
+              setItem(data);
+              setImgSrc(data.images[0]);
+              console.log(data);
+              console.log(id);
+            });
+        } 
+        }, [id]); 
     
     if (item) {
         return (
             <div className="p-5 mb-4 bg-light rounded-3">
                 <div className="d-flex flex-column container-fluid col-md-7 py-5 align-items-center">
-                    <button type="button" className="btn btn-secondary">Back</button>
+                    <button type="button" className="btn btn-secondary" onClick={moveBack}>Back</button>
                     <h2 className="display-5 fw-bold">{item.title}</h2>
                     <div className="product-content d-flex col-md-8">
                         <div className="col-md-5">
