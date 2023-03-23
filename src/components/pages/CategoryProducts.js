@@ -5,7 +5,7 @@ import { useMatches } from "react-router";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Product from "./Product";
-
+import store from "../../store";
 
 export default function CategoryProducts() {
   const { name } = useParams();
@@ -45,19 +45,16 @@ export default function CategoryProducts() {
 
   const handleAddToBasket = (product) => {
     // Todo: add logic for adding to basket
-    console.log("Adding to basket", product);
+    store.dispatch({ type: 'cart/productAdded', payload: product })
+    console.log(store.getState());
+    console.log(store);
   };
 
   if (products.products) {
     return (
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {products.products.map(({ id, name, images, price }) => (
-          <Link to={`product/${id}`} key={"product "+ id +" link"}>
-            <Routes>
-              {/*Create a route with a placeholder id element on the end of the URL*/}
-              <Route path="product/:id" element={<Product data={products.products}/>}  />
-            </Routes>
-            <div key={name} style={{ width: "300px", margin: "20px" }}>
+        {products.products.map(({ id, title, images, price }) => (
+            <div key={title} style={{ width: "300px", margin: "20px" }}>
               <img src={images[0]} style={{ width: "100%" }} alt="" />
               <div
                 style={{
@@ -69,14 +66,22 @@ export default function CategoryProducts() {
                   padding: "5px",
                 }}
               >
-                <div>{name}</div>
+                <div>{title}</div>
                 <div>${price}</div>
                 <button onClick={() => handleAddToBasket({ name, images, price })}>
                   Add to Basket
                 </button>
+                <Link to={`product/${id}`} key={"product "+ id +" link"}>
+                  <Routes>
+                    {/*Create a route with a placeholder id element on the end of the URL*/}
+                    <Route path="product/:id" element={<Product data={products.products}/>}  />
+                  </Routes>
+                  <button>
+                    More
+                  </button>
+                </Link>
               </div>
             </div>
-          </Link>
         ))}
       </div>
     );
