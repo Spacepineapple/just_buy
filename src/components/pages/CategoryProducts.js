@@ -1,21 +1,18 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
+import {useParams} from "react-router-dom";
 import { useMatches } from "react-router";
+import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Product from "./Product";
+import store from "../../store";
 
 export default function CategoryProducts() {
-  const { categoryName } = useMatches.params;
+  const { name } = useParams();
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    const query = getCategoryQuery(categoryName);
-    axios
-      .get(`https://dummyjson.com/products?category=${query}`)
-      .then(({ data }) => {
-        setProducts(data);
-      });
-  }, [categoryName]);
-
   const getCategoryQuery = (name) => {
+    console.log(name);
     switch (name) {
       case "tech":
         return "smartphones&category=laptops";
@@ -34,34 +31,63 @@ export default function CategoryProducts() {
     }
   };
 
+  useEffect (() => {
+    const query = getCategoryQuery(name);
+    axios
+      .get(`https://dummyjson.com/products?category=${query}`)
+      .then(({ data }) => {
+        setProducts(data);
+        console.log(query);
+        console.log(name);
+      });
+  }, [name]);
+
+
   const handleAddToBasket = (product) => {
     // Todo: add logic for adding to basket
-    console.log("Adding to basket", product);
+    store.dispatch({ type: 'cart/productAdded', payload: product })
+    console.log(store.getState());
+    console.log(store);
   };
 
-  return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {products.map(({ name, image, price }) => (
-        <div key={name} style={{ width: "300px", margin: "20px" }}>
-          <img src={image} style={{ width: "100%" }} alt="" />
-          <div
-            style={{
-              position: "relative",
-              bottom: "0",
-              left: "0",
-              backgroundColor: "black",
-              color: "white",
-              padding: "5px",
-            }}
-          >
-            <div>{name}</div>
-            <div>${price}</div>
-            <button onClick={() => handleAddToBasket({ name, image, price })}>
-              Add to Basket
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
+  if (products.products) {
+    return (
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {products.products.map(({ id, title, images, price }) => (
+            <div key={title} style={{ width: "300px", margin: "20px" }}>
+              <img src={images[0]} style={{ width: "100%" }} alt="" />
+              <div
+                style={{
+                  position: "relative",
+                  bottom: "0",
+                  left: "0",
+                  backgroundColor: "black",
+                  color: "white",
+                  padding: "5px",
+                }}
+              >
+                <div>{title}</div>
+                <div>${price}</div>
+                <button onClick={() => handleAddToBasket({ title, images, price })}>
+                  Add to Basket
+                </button>
+                <Link to={`product/${id}`} key={"product "+ id +" link"}>
+                  <Routes>
+                    {/*Create a route with a placeholder id element on the end of the URL*/}
+                    <Route path="product/:id" element={<Product data={products.products}/>}  />
+                  </Routes>
+                  <button>
+                    More
+                  </button>
+                </Link>
+              </div>
+            </div>
+        ))}
+      </div>
+    );
+  }
+  else {
+    return <h2>Loading</h2>
+  }
+
 }

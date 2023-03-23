@@ -1,3 +1,6 @@
+import { Link, Route, Routes } from "react-router-dom";
+import CategoryProducts from "./pages/CategoryProducts";
+
 export default function CategoryCard({ name, onClick }) {
   // console.log(name);
   return (
