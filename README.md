@@ -84,5 +84,5 @@ Project Link: [https://github.com/OsmanTolo/just_buy_ecommerce_react](https://gi
 
 This website was built as the final project for the [Skills for Life Boot Camp
 by Trinity](https://skillsforlife.campaign.gov.uk/courses/skills-bootcamps/).
-Code contained within the localStorage.js file was based on a guide produced by
-Dan Abramov which can be found at: https://egghead.io/lessons/javascript-redux-persisting-the-state-to-the-local-storage.
+Code contained within the localStorage.js file was based on a tutorial guide produced by
+Dan Abramov which can be found [here](https://egghead.io/lessons/javascript-redux-persisting-the-state-to-the-local-storage).
