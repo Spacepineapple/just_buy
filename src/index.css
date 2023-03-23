@@ -198,3 +198,12 @@ button {
   background-color: var(--primary-color) !important;
   border: none !important;
 }
+
+.accordion-item button {
+  background-color: var(--secondary-color) !important;
+  font-weight: bold !important;
+}
+
+.accordion-body {
+  background-color: var(--secondary-color) !important;
+}
