@@ -67,21 +67,48 @@ nav {
   padding: 0 0.75rem !important;
 }
 
+.contact-hero {
+  margin: 3.5rem 0;
+}
+
+.contact-details li > span {
+  color: #f56400;
+  font-weight: bold !important;
+  margin-right: 0.5rem !important;
+}
+
 .about-hero {
   display: flex !important;
   flex-direction: column !important;
 }
 
-.about-hero__heading {
+.about-hero__heading,
+.contact-heading {
   font-weight: bold;
   font-size: 1.5rem;
-  text-align: center;
+  text-align: left;
   margin-bottom: 1rem !important;
   color: #f56400;
 }
 
-.about-hero__text {
+.about-hero__text,
+.contact-text {
   font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.contact-details {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  list-style-type: none;
+  padding-left: 0 !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .contact-hero {
+    display: flex !important;
+    flex-direction: column !important;
+  }
 }
 
 /* Media queries for responsive typography */
@@ -108,16 +135,20 @@ nav {
     padding: 0 !important;
   }
 
-  .about-hero {
+  .about-hero,
+  .contact-hero {
     margin: 3.5rem 0;
   }
 
-  .about-hero__heading {
+  .about-hero__heading,
+  .contact-heading {
     font-weight: bold;
   }
 
-  .about-hero__text {
+  .about-hero__text,
+  .contact-text {
     font-size: 1.35rem;
+    margin-bottom: 1rem;
   }
 
   .about-card {
@@ -165,4 +196,5 @@ nav {
 
 button {
   background-color: var(--primary-color) !important;
+  border: none !important;
 }
