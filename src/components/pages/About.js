@@ -48,7 +48,7 @@ function AboutUs() {
         <p className="card-text">black basic tshirt</p>
         <h6 className = "mt-2">12£</h6>
         <div className="card text-center">
-            <a href="#" className="btn btn-primary">Add to Cart</a>
+        <a href="#" className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={handleClick}>{ active ? "Remove" : "Add to your Cart"}</a>
         </div>
     </div>
 </div>
@@ -70,7 +70,7 @@ function AboutUs() {
         <p className="card-text">purple flower tshirt</p>
         <h6 className = "mt-2">20£</h6>
         <div className="card text-center">
-            <a href="#" className="btn btn-primary">Add to Cart</a>
+        <a href="#" className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={handleClick}>{ active ? "Remove" : "Add to your Cart"}</a>
         </div>
     </div>
 </div>
@@ -91,7 +91,7 @@ function AboutUs() {
         <p className="card-text">green tshirt</p>
         <h6 className = "mt-2">14£</h6>
         <div className="card text-center">
-            <a href="#" className="btn btn-primary">Add to Cart</a>
+        <a href="#" className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={handleClick}>{ active ? "Remove" : "Add to your Cart"}</a>
         </div>
     </div>
 </div>
@@ -111,7 +111,7 @@ function AboutUs() {
         <p className="card-text">white basic tshirt</p>
         <h6 className = "mt-2">18£</h6>
         <div className="card text-center">
-            <a href="#" className="btn btn-primary">Add to Cart</a>
+        <a href="#" className= {active ? "btn btn-danger" : "btn btn-primary"} onClick={handleClick}>{ active ? "Remove" : "Add to your Cart"}</a>
         </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Login from "./pages/Login";
 import { NavLink } from 'react-router-dom';
+import ShoppingCart from "./pages/ShoppingCart";
 
 function NavBar() {
   return (
@@ -97,7 +98,7 @@ function NavBar() {
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -114,6 +115,7 @@ function NavBar() {
                 </span>
               </sup>
             </a>
+            <ShoppingCart></ShoppingCart>
           </li>
           <li className="nav-item dropdown">
             <a
