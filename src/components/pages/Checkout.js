@@ -9,7 +9,7 @@ function Checkout() {
     //Get live data from the store
     const products = useSelector(state => state.products);
     return (
-        <div>
+        <div className="custom-container">
             <h2>Checkout</h2>
             <p>See your basket below, make any changes you wish to and then use the Checkout button to checkout!</p>
             {/*For each product in the cart, create a basketcard*/}
