@@ -16,7 +16,7 @@ const deals = [
     image:
       "https://assets.aboutamazon.com/dims4/default/bf58387/2147483647/strip/true/crop/2700x1520+0+140/resize/1320x743!/format/webp/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F72%2Faa%2Fe069c5c6485bbae46ea3bd144612%2Fa3den9zk.jpeg",
     subtext: "We'll match your purchase price for qualifying products",
-    description: "You cant too.",
+    description: "You can too.",
   },
   {
     id: 3,

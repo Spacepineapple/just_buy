@@ -1,5 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Product from "./pages/Product";
 import "../assets/css/topDeals.css";
 
 const TopDeals = () => {
@@ -29,6 +32,10 @@ const TopDeals = () => {
         {products.map((product) => (
           <div key={product.id} className="grid-item">
             <div className="topDeal-card">
+              <Link to={`/category/${product.category}/product/${product.id}`}>
+              <Routes>
+                <Route to={"/category/:category/product/:id"} element={<Product data={product} />}/>
+              </Routes>
               <div>
                 <img
                   src={product.images[0]}
@@ -45,6 +52,7 @@ const TopDeals = () => {
                   Price: £{Math.ceil(product.price)}
                 </p>
               </div>
+              </Link>
             </div>
           </div>
         ))}
