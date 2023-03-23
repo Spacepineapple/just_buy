@@ -24,10 +24,7 @@ const initialState = {
       case "cart/productRemoved": {
         return {
             ...state,
-            products: [
-                ...state.products.slice(0, action.payload),
-                ...state.products.slice(action.payload + 1)
-                ],
+            products: state.products.filter(item => item.id !== action.payload)
             }
         }
         case "cart/clearCart": {
