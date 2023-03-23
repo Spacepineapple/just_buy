@@ -2,7 +2,7 @@ export const loadState = () => {
     try {
         const currentState = localStorage.getItem("state");
         if (currentState === null) {
-            return undefined;
+            return "";
         }
         return JSON.parse(currentState);
     } catch(err) {

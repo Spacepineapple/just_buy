@@ -1,10 +1,10 @@
-const initialState = {
-    products: [],
-  }
+import {loadState} from "./localStorage";
+
+const initialState = loadState()
 
   function generateId(state=initialState) {
     return state.products.length++;
-}
+    }
   
   function cartReducer(state = initialState, action) {
     switch (action.type) {
