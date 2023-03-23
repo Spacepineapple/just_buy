@@ -14,14 +14,6 @@ export default function ProductList({ categoryName }) {
       .catch((error) => console.log(error));
   }, [categoryName]);
 
-  // const handleProductClick = (productId) => {
-  //   setSelectedProductId(productId);
-  // };
-
-  // if (selectedProductId) {
-  //   return <ProductPage productName={selectedProductId} />;
-  // }
-
   if (products) {
     return (
       <div>
@@ -41,5 +33,3 @@ export default function ProductList({ categoryName }) {
     );
   }
 }
-
-// onClick={() => handleProductClick(product)}

@@ -1,5 +1,5 @@
 import Category from "../Category";
-import CardItem from "./CardItem";
+import TopDeals from "../TopDeals";
 
 export default function ShopPage() {
   return (
@@ -7,8 +7,7 @@ export default function ShopPage() {
       <Category />
 
       <section class="sales">
-        <h2 class="header-caption">Products at Slashed Prices</h2>
-        {/* <CardItem /> */}
+        <TopDeals />
       </section>
     </div>
   );

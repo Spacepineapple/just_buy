@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import "../assets/css/category.css";
 import CategoryCard from "./CategoryCard";
 import ProductList from "./ProductList";
 
@@ -14,7 +15,6 @@ export default function Category() {
       .get("https://dummyjson.com/products/categories")
       .then((response) => {
         setCategories(response.data);
-        // console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -31,13 +31,9 @@ export default function Category() {
 
   // Render a list of CategoryCard components, passing in the "name" and "image" props for each category
   return (
-    <section className="shop-categories">
+    <section className="shop-categories custom-container">
       <h2 className="shop-header__caption">Shop by Category</h2>
-      <ul
-        style={{
-          listStyle: "none",
-        }}
-      >
+      <div className="category-items">
         {categories.map((category) => (
           <CategoryCard
             key={category}
@@ -45,7 +41,7 @@ export default function Category() {
             onClick={() => handleCategoryClick(category)}
           />
         ))}
-      </ul>
+      </div>
     </section>
   );
 }
