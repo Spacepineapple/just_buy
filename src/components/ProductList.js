@@ -34,7 +34,7 @@ export default function ProductList({ categoryName }) {
         </h2>
         <div>
           {products.map((product) => (
-            <li key={product.id}>{product.title}</li>
+            <div key={product.id}>{product.title}</div>
           ))}
         </div>
       </div>

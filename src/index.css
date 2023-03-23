@@ -67,6 +67,23 @@ nav {
   padding: 0 0.75rem !important;
 }
 
+.about-hero {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.about-hero__heading {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem !important;
+  color: #f56400;
+}
+
+.about-hero__text {
+  font-size: 1.25rem;
+}
+
 /* Media queries for responsive typography */
 @media only screen and (min-width: 768px) {
   :root {
@@ -89,6 +106,41 @@ nav {
     max-width: 750px !important;
     margin: 0 auto !important;
     padding: 0 !important;
+  }
+
+  .about-hero {
+    margin: 3.5rem 0;
+  }
+
+  .about-hero__heading {
+    font-weight: bold;
+  }
+
+  .about-hero__text {
+    font-size: 1.35rem;
+  }
+
+  .about-card {
+    padding: 20px 20px 30px;
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    white-space: normal;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-card > h2 {
+    font-size: 1.5rem;
+    color: #f56400;
+  }
+
+  .about-card__text {
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: #2f3033;
+    padding-bottom: 2rem;
+    flex: 1 1 100%;
   }
 }
 
