@@ -1,0 +1,39 @@
+nav {
+  background: #efefef !important;
+  color: #f56400 !important;
+  padding: 1rem !important;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f56400 !important;
+}
+
+nav .logo:hover {
+  text-decoration: none !important;
+  color: #f56400 !important;
+}
+
+nav > .nav-link {
+  color: #f56400 !important;
+}
+
+.navbar-collapse-custom {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.nav-link {
+  color: #111111 !important;
+}
+
+.nav-link:hover {
+  color: #f56400 !important;
+}
+
+.sign-in {
+  display: flex !important;
+  align-items: center;
+  gap: 0.25rem;
+}

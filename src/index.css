@@ -3,17 +3,11 @@
 
 /* Variables */
 :root {
-  /* Light mode */
-  --color-primary: #000000;
-  --color-secondary: #ffffff;
-  --color-accent: #c3073f;
-  --color-background: #efefef;
-
-  /* Dark mode */
-  --color-primary-dark: #ffffff;
-  --color-secondary-dark: #000000;
-  --color-accent-dark: #ff2d55;
-  --color-background-dark: #1c1c1e;
+  --primary-color: #f56400;
+  --secondary-color: #f5e8df;
+  --background-color: #efefef;
+  --text-color: #111111;
+  --accent-color: #1c1c1c;
 
   /* Typography variables */
   --body-font: "Open Sans", sans-serif;
@@ -25,15 +19,15 @@
 /* Global styles */
 html {
   font-size: 14px;
-  color: var(--light-text-color);
+  color: var(--text-color);
 }
 
 body {
   font-family: var(--body-font);
   font-size: var(--body-font-size);
   line-height: var(--body-line-height);
-  background-color: var(--color-background);
-  color: var(--color-primary);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 a {
@@ -41,10 +35,10 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+/* a:hover {
   color: var(--secondary-color);
   text-decoration: underline;
-}
+} */
 
 h1,
 h2,
@@ -59,37 +53,18 @@ h6 {
 }
 
 section {
-  padding-top: 2rem;
   padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 nav {
-  background: #434344 !important;
-  color: var(--color-secondary) !important;
-  padding: 1rem !important;
+  font-family: var(--heading-font);
 }
 
-nav > .nav-link {
-  color: var(--color-secondary) !important;
-}
-
-/* Styles for light mode */
-[data-theme="light"] {
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --light-color: #f8f9fa;
-  --dark-color: #343a40;
-}
-
-/* Styles for dark mode */
-[data-theme="dark"] {
-  --primary-color: #4e7c7a;
-  --secondary-color: #bfbfbf;
-  --light-color: #212529;
-  --dark-color: #f8f9fa;
-
-  color: var(--dark-text-color);
-  background-color: var(--dark-bg-color);
+.custom-container {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 0.75rem !important;
 }
 
 /* Media queries for responsive typography */
@@ -108,6 +83,13 @@ nav > .nav-link {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
   }
+
+  .custom-container {
+    width: 100% !important;
+    max-width: 750px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -118,23 +100,9 @@ nav > .nav-link {
 
   .custom-container {
     width: 100% !important;
-    max-width: 1200px !important;
+    max-width: 1024px !important;
     margin: 0 auto !important;
   }
-  /* .footer-cell li {
-    list-style-type: none;
-  }
-
-  .footer-upper {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-lower {
-    display: flex;
-  } */
 
   .container-fluid {
     display: flex;
@@ -144,63 +112,5 @@ nav > .nav-link {
 }
 
 button {
-  background-color: #0072c6 !important;
+  background-color: var(--primary-color) !important;
 }
-
-/* Medium screens (tablets and small desktops) */
-/* @media only screen and (min-width: 768px) {
-  .footer-upper,
-  .footer-lower {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-  .footer-lower {
-    width: 100%;
-    justify-content: space-evenly;
-    flex-direction: row;
-  }
-  .footer-upper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-cards {
-    display: flex;
-  }
-} */
-
-/* Large screens (large desktops and high-resolution displays) */
-/* @media only screen and (min-width: 1200px) {
-  .footer-lower {
-    display: flex;
-    width: 100%;
-  }
-
-  .footer-cards {
-    display: flex;
-    justify-content: space-evenly;
-    width: 75%;
-  }
-
-  .footer-cell {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 15%;
-    border: none;
-  }
-
-  .footer-upper,
-  .footer-lower {
-    margin-left: 10%;
-    margin-right: 10%;
-    justify-content: space-evenly;
-    flex-direction: row;
-  }
-
-  .container-fluid {
-    align-items: flex-start;
-  }
-} */

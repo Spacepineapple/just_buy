@@ -4,27 +4,27 @@ import Carousel from "react-bootstrap/Carousel";
 const deals = [
   {
     id: 1,
-    name: "Product 1",
+    name: "Spring Sale",
     image:
-      "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    price: "$10",
-    description: "This is product 1",
+      "https://images.unsplash.com/photo-1615655406736-b37c4fabf923?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    subtext: "27-29 March",
+    description: "Shop up to 40% off",
   },
   {
     id: 2,
-    name: "Product 2",
+    name: "We're helping Comic Relief change lives.",
     image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    price: "$20",
-    description: "This is product 2",
+      "https://assets.aboutamazon.com/dims4/default/bf58387/2147483647/strip/true/crop/2700x1520+0+140/resize/1320x743!/format/webp/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F72%2Faa%2Fe069c5c6485bbae46ea3bd144612%2Fa3den9zk.jpeg",
+    subtext: "We'll match your purchase price for qualifying products",
+    description: "You cant too.",
   },
   {
     id: 3,
-    name: "Product 3",
+    name: "Your goodies delivered with lighting speed!",
     image:
-      "https://images.unsplash.com/photo-1615655406736-b37c4fabf923?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    price: "$30",
-    description: "This is product 3",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    subtext: "Waiting is so last season.",
+    description: "Enjoy free shipping on thousands of products",
   },
 ];
 
@@ -42,9 +42,9 @@ const MyCarousel = () => {
           <Carousel.Item key={deal.id}>
             <img className="d-block w-100" src={deal.image} alt={deal.name} />
             <Carousel.Caption>
-              <h3>{deal.name}</h3>
-              <p>{deal.description}</p>
-              <p>{deal.price}</p>
+              <h2>{deal.name}</h2>
+              <h4>{deal.description}</h4>
+              <p>{deal.subtext}</p>
             </Carousel.Caption>
           </Carousel.Item>
         ))}
