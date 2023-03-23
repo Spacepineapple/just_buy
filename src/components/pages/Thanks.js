@@ -4,12 +4,15 @@ import axios from "axios";
 
 
 function ThankYou() {
+    //Create state handler for quote
     const [quote, setQuote] = useState("Loading");
 
+    //Run quote getter on render
     useEffect (() => {
         getData()
     }, []);
 
+    //Get the quote data
     const getData = () => {
         axios
           .get("https://dummyjson.com/quotes/random")
@@ -19,7 +22,9 @@ function ThankYou() {
           });
       };
     
+    //Clear local storage to remove basket
     localStorage.clear();
+    //Empty basket in store
     store.dispatch({ type: 'cart/clearCart', payload: "" })
     return(
     <div>

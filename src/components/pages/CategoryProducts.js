@@ -8,27 +8,28 @@ import Product from "./Product";
 import store from "../../store";
 
 export default function CategoryProducts() {
+  //Get category name from URL
   const { name } = useParams();
+  //Create state handler for products
   const [products, setProducts] = useState([]);
 
+  //Request data from API
   useEffect (() => {
     axios
       .get(`https://dummyjson.com/products/category/${name}`)
       .then(({ data }) => {
         setProducts(data);
-        console.log(name);
-        console.log(name);
       });
   }, [name]);
 
 
   const handleAddToBasket = (product) => {
-    // Todo: add logic for adding to basket
+    // Send a message to the store to add a product to the cart
     store.dispatch({ type: 'cart/productAdded', payload: product })
     console.log(store.getState());
-    console.log(store);
   };
 
+  //Display loading before state change has occurred
   if (products.products) {
     return (
       <div style={{ display: "flex", flexWrap: "wrap" }}>

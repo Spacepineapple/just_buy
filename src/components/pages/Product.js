@@ -2,45 +2,40 @@ import axios from "axios";
 import React, {useEffect, useState } from "react";
 import {useParams} from "react-router-dom";
 import store from "../../store";
-import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
-import CategoryProducts from "./CategoryProducts";
 
 
 function Product({data}) {
+    //Create state handler for products
     const [item, setItem] = useState([]);
+    //Create state handler for product images
     const [imgSrc, setImgSrc] = useState();
+    //Get id and category parameters from URL
     let {id, category} = useParams();
 
     const handleAddToBasket = (item) => {
+        //Send message to store to add product to cart
         store.dispatch({ type: 'cart/productAdded', payload: item })
-        console.log(store.getState());
-        console.log(store);
       };
     
+    //Use the navigator hook to allow users to go back
     const navigate = useNavigate();
+    //Create function to move back one page
 	const moveBack = () => {
 		navigate(-1);
 	}
-    let productData = undefined;
     useEffect (() => {
-        if (productData) {
+        axios
+        .get(`https://dummyjson.com/products/${id}`)
+        .then(({ data }) => {
+            //Set product to use requested data
             setItem(data);
-            setImgSrc(data.images[0])
-            console.log("Used saved data");
-        } else {
-            axios
-            .get(`https://dummyjson.com/products/${id}`)
-            .then(({ data }) => {
-              productData = data;
-              setItem(data);
-              setImgSrc(data.images[0]);
-              console.log(data);
-              console.log(id);
-            });
-        } 
+            //Set product image to use requested data
+            setImgSrc(data.images[0]);
+        });
         }, [id]); 
     
+    //Display loading before state change has happened
     if (item) {
         return (
             <div className="p-5 mb-4 bg-light rounded-3">

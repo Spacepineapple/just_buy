@@ -16,7 +16,6 @@ import CategoryProducts from "./components/pages/CategoryProducts";
 import Product from "./components/pages/Product";
 
 function App() {
-  // Todo: Add theme switcher code here
   return (
     <div className="App">
       <Router>

@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+//Import provider to facilitate redux store
 import {Provider}  from 'react-redux'
+//Import store to keep track of products across pages
 import store from "./store";
 
 // Importing the Bootstrap CSS

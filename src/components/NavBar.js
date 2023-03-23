@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import "../assets/css/navbar.css";
 
 function NavBar() {
+  //Get the live size of the cart from the store and update it when store state changes
   const cartCount = useSelector(state => state.products.length);
   
   return (
