@@ -35,7 +35,7 @@ const TopDeals = () => {
               <Routes>
                 <Route to={"/category/:category/product/:id"} element={<Product data={product} />}/>
               </Routes>
-              <div>
+              <div className="home-product-image">
                 <img
                   src={product.images[0]}
                   alt={product.description}
