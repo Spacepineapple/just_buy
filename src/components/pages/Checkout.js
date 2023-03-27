@@ -1,5 +1,4 @@
 import React from 'react';
-import store from "../../store";
 import BasketCard from "../BasketCard";
 import { BrowserRouter as Router, Route, Routes, useNavigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";

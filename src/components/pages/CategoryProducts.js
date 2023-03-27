@@ -1,11 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useMatches } from "react-router";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Product from "./Product";
-import store from "../../store";
+import {store} from "../../store";
 
 export default function CategoryProducts() {
   //Get category name from URL

@@ -1,7 +1,17 @@
+import { persistantState } from "./store";
+
 //Set initial state
+/*
 const initialState = {
-        products: [],
+    products: [],
 }
+*/
+/*
+if (localStorage.getItem(products) === Null) {
+} else {
+    initialState = localStorage.getItem(products)
+}
+*/
 
 let currentId = 0;
 
@@ -11,7 +21,7 @@ function generateId() {
 }
 
 //Create function to handle cart actions
-function cartReducer(state = initialState, action) {
+function cartReducer(state=persistantState, action) {
     //Enable multiple actions based on message
     switch (action.type) {
         //If product is added
