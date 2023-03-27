@@ -15,6 +15,7 @@ function Product({data}) {
 
     const handleAddToBasket = (item) => {
         //Send message to store to add product to cart
+        console.log(item);
         store.dispatch({ type: 'cart/productAdded', payload: item })
       };
     
@@ -50,7 +51,7 @@ function Product({data}) {
                             <p className="col-md-12 fs-4">{item.description}</p>
                             <p className="col-md-4 fs-4 d-flex justify-content-center">£{item.price}</p>
                             <p className="col-md-4 fs-4 d-flex justify-content-center">{item.rating}</p>
-                            <button type="button" className="btn btn-primary" onClick={() => handleAddToBasket(item.title, item.images, item.description, item.price)}>Add to Cart</button>
+                            <button type="button" className="btn btn-primary" onClick={() => handleAddToBasket(item)}>Add to Cart</button>
                         </div>
                     </div>
                 </div>

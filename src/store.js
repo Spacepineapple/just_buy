@@ -11,7 +11,8 @@ const store = configureStore(
 
 store.subscribe(() => {
   saveState({
-    products: store.getState().products
+    products: store.getState().products,
+    currentId: store.getState().currentId
   });
 });
 
