@@ -24,20 +24,8 @@ function cartReducer(state=persistantState, action) {
     switch (action.type) {
         //If product is added
         case "cart/productAdded": {
-            if (state.products.find(item => item.id===action.payload.id)) {
-                let item = state.products.find(item => item.id===action.payload);
-                return {
-                    ...state,
-                    products: [
-                        ...state.products,
-                        {   
-                            id: generateId(),
-                            ...item,
-                            count: item.count++,
-                        }
-                    ],
-                    "currentId": state.currentId
-                }
+            if (state.products.find(item => item.product.id===action.payload.id)) {
+                return {...state, products: state.products.map(item => item.product.id === action.payload.id ? {...item, count:item.count+1} : item)}                
             } else {
                 let currentId = state.currentId;
                 return {

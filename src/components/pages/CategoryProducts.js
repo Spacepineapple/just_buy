@@ -53,7 +53,7 @@ export default function CategoryProducts() {
               <div className="buttons">
                 <button
                   className="add-button prod-button"
-                  onClick={() => handleAddToBasket({ title, images, price })}
+                  onClick={() => handleAddToBasket({ id, title, images, price })}
                 >
                   Add
                 </button>
