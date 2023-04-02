@@ -24,9 +24,6 @@ function cartReducer(state=persistantState, action) {
     switch (action.type) {
         //If product is added
         case "cart/productAdded": {
-            if (state.products.find(item => item.product.id===action.payload.id)) {
-                return {...state, products: state.products.map(item => item.product.id === action.payload.id ? {...item, count:item.count+1} : item)}                
-            } else {
                 let currentId = state.currentId;
                 return {
                     //Maintain existing state
@@ -45,15 +42,26 @@ function cartReducer(state=persistantState, action) {
                     currentId: state.currentId+1
                 }        
             }
-        }
         //If product is removed
         case "cart/productRemoved": {
             return {
                 //Maintain existing state
                 ...state,
                 //Filter products to remove item with desired id
-                products: state.products.filter(item => item.id !== action.payload)
+                products: state.products.filter(item => item.product.id !== action.payload)
             }
+        }
+        case "cart/productIncreased": {
+                return {
+                    ...state, 
+                    products: state.products.map(item => item.product.id === action.payload ? {...item, count:item.count+1} : item)
+            }                
+        }
+        case "cart/productReduced": {
+                return {
+                    ...state,
+                    products: state.products.map(item => item.product.id === action.payload ? {...item, count:item.count-1} : item)
+                }
         }
         case "cart/clearCart": {
             return {

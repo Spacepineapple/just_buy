@@ -4,7 +4,18 @@ import {store} from "../store";
 
 function removeItem(id) {
     //Send message to store to remove product
-    store.dispatch({ type: 'cart/productRemoved', payload: id })
+    console.log(id);
+    store.dispatch({ type: "cart/productRemoved", payload: id })
+}
+
+function increaseItem(id) {
+    console.log(id);
+    store.dispatch({ type: "cart/productIncreased", payload: id})
+}
+
+function reduceItem(id) {
+    console.log(id);
+    store.dispatch({ type: "cart/productReduced", payload: id})
 }
 
 function BasketCard({props}) {
@@ -19,7 +30,11 @@ function BasketCard({props}) {
                 <h5 className="card-title">{props.product.title}</h5>
                 <p className="card-text">{props.product.description}</p>
                 <p className="card-text">{props.product.price}</p>
-                <button onClick={()=>removeItem(props.id)}>Remove</button>
+                <button onClick={()=>removeItem(props.product.id)}>Remove</button>
+                <br/>
+                <button onClick={()=>increaseItem(props.product.id)}>+</button>
+                <br/>
+                <button onClick={()=>reduceItem(props.product.id)}>-</button>
             </div>
             </div>
         </div>
