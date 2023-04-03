@@ -105,6 +105,49 @@
   height: 10vh;
 }
 
+.basket-card {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.basket-content {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.basket-image img {
+  height: 25vh;
+}
+
+.basket-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.basket-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 767px) {
   .shop-grid__container {
     grid-template-columns: repeat(3, 1fr);
