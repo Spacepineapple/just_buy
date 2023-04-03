@@ -24,6 +24,9 @@ function cartReducer(state=persistantState, action) {
     switch (action.type) {
         //If product is added
         case "cart/productAdded": {
+            if (state.products.find(item => item.product.id===action.payload.id)) {
+                return {...state, products: state.products.map(item => item.product.id === action.payload.id ? {...item, count:item.count+1} : item)}                
+            } else {
                 let currentId = state.currentId;
                 return {
                     //Maintain existing state
@@ -36,12 +39,13 @@ function cartReducer(state=persistantState, action) {
                         {
                             id: generateId(),
                             product: action.payload,
-                            count: 0,
+                            count: 1,
                         }
                     ],
                     currentId: state.currentId+1
                 }        
             }
+        }
         //If product is removed
         case "cart/productRemoved": {
             return {
@@ -66,7 +70,7 @@ function cartReducer(state=persistantState, action) {
         case "cart/productChanged": {
             return {
                 ...state,
-                products: state.products.map(item => item.product.id === Number(action.payload.id) ? {...item, count: action.payload.value} : item)
+                products: state.products.map(item => item.product.id === action.payload.id ? {...item, count: action.payload.value} : item)
             }
         }
         case "cart/clearCart": {
