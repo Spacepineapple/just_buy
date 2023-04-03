@@ -213,3 +213,15 @@ button {
 .accordion-body {
   background-color: var(--secondary-color) !important;
 }
+
+/* Remove up and down buttons from number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove up and down buttons from number input on Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
