@@ -60,8 +60,14 @@ function cartReducer(state=persistantState, action) {
         case "cart/productReduced": {
                 return {
                     ...state,
-                    products: state.products.map(item => item.product.id === action.payload ? {...item, count:item.count-1} : item)
+                    products: state.products.map(item => item.product.id === action.payload && item.count>1 ? {...item, count:item.count-1} : item)
                 }
+        }
+        case "cart/productChanged": {
+            return {
+                ...state,
+                products: state.products.map(item => item.product.id === Number(action.payload.id) ? {...item, count: action.payload.value} : item)
+            }
         }
         case "cart/clearCart": {
             return {

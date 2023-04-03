@@ -1,7 +1,6 @@
 import React from "react";
 import {store} from "../store";
 
-
 function removeItem(id) {
     //Send message to store to remove product
     console.log(id);
@@ -18,6 +17,11 @@ function reduceItem(id) {
     store.dispatch({ type: "cart/productReduced", payload: id})
 }
 
+function changeItem(event) {
+    let payload = {id: event.target.name, value: event.target.value}
+    store.dispatch({ type: "cart/productChanged", payload: payload})
+}
+
 function BasketCard({props}) {
     return (
         <div className="card mb-3" styles="max-width: 540px;">
@@ -32,9 +36,11 @@ function BasketCard({props}) {
                 <p className="card-text">{props.product.price}</p>
                 <button onClick={()=>removeItem(props.product.id)}>Remove</button>
                 <br/>
+                <div className="buttons-div">
                 <button onClick={()=>increaseItem(props.product.id)}>+</button>
-                <br/>
+                <input type="number" id="product-count" name={props.product.id} value={props.count} placeHolder={props.count} onChange={changeItem}/>
                 <button onClick={()=>reduceItem(props.product.id)}>-</button>
+                </div>
             </div>
             </div>
         </div>

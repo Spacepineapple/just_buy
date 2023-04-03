@@ -14,7 +14,7 @@ function Checkout() {
             <p>See your basket below, make any changes you wish to and then use the Checkout button to checkout!</p>
             {/*For each product in the cart, create a basketcard*/}
             {products.map(product => {
-                return <BasketCard props={product} key={product.id}/>
+                return <BasketCard props={product} key={product.product.id}/>
             })}
             {/*Attach a link to the thank you page to the button*/}
             <Link to={"/thanks"}>
