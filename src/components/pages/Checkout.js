@@ -1,5 +1,6 @@
 import React from 'react';
 import BasketCard from "../BasketCard";
+import BasketInfo from "../BasketInfo";
 import { BrowserRouter as Router, Route, Routes, useNavigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Thanks from "./Thanks";
@@ -16,6 +17,7 @@ function Checkout() {
             {products.map(product => {
                 return <BasketCard props={product} key={product.product.id}/>
             })}
+            <BasketInfo/>
             {/*Attach a link to the thank you page to the button*/}
             <Link to={"/thanks"}>
                 <Routes>

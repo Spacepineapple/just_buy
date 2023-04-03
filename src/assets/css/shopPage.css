@@ -194,6 +194,12 @@
     width: 100%;
   }
   
+  .basket-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }  
+
 }
 
 @media (max-width: 500px) {
