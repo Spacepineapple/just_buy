@@ -15,7 +15,11 @@ if (localStorage.getItem(products) === Null) {
 
 //Create function to generate id
 function generateId(state=persistantState) {
-    return state.currentId+1;
+    if (state.currentId===null) {
+        return 0
+    } else {
+        return state.currentId+1;
+    }
 }
 
 //Create function to handle cart actions

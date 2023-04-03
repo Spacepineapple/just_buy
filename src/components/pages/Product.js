@@ -13,10 +13,10 @@ function Product({data}) {
     //Get id and category parameters from URL
     let {id, category} = useParams();
 
-    const handleAddToBasket = (item) => {
+    const handleAddToBasket = (product) => {
         //Send message to store to add product to cart
-        console.log(item);
-        store.dispatch({ type: 'cart/productAdded', payload: item })
+        console.log(product);
+        store.dispatch({ type: 'cart/productAdded', payload: product })
       };
     
     //Use the navigator hook to allow users to go back
@@ -38,20 +38,21 @@ function Product({data}) {
     
     //Display loading before state change has happened
     if (item) {
+        let {id, title, images, price, rating, description} = item;
         return (
             <div className="p-5 mb-4 bg-light rounded-3">
                 <div className="d-flex flex-column container-fluid col-md-7 py-5 align-items-center">
                     <button type="button" className="btn btn-secondary" onClick={moveBack}>Back</button>
-                    <h2 className="display-5 fw-bold">{item.title}</h2>
+                    <h2 className="display-5 fw-bold">{title}</h2>
                     <div className="product-content d-flex col-md-8">
                         <div className="col-md-5">
                             <img src={imgSrc}/>
                         </div>
                         <div className="d-flex col-md-10 flex-column align-items-center justify-content-center">
-                            <p className="col-md-12 fs-4">{item.description}</p>
-                            <p className="col-md-4 fs-4 d-flex justify-content-center">£{item.price}</p>
-                            <p className="col-md-4 fs-4 d-flex justify-content-center">{item.rating}</p>
-                            <button type="button" className="btn btn-primary" onClick={() => handleAddToBasket(item)}>Add to Cart</button>
+                            <p className="col-md-12 fs-4">{description}</p>
+                            <p className="col-md-4 fs-4 d-flex justify-content-center">£{price}</p>
+                            <p className="col-md-4 fs-4 d-flex justify-content-center">{rating}</p>
+                            <button type="button" className="btn btn-primary" onClick={() => handleAddToBasket({id, title, images, price})}>Add to Cart</button>
                         </div>
                     </div>
                 </div>
