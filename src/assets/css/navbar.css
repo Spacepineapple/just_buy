@@ -71,6 +71,14 @@ nav > .nav-link {
     display: none;
   }
 
+  #burger-links {
+    display: none;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
 }
 
 .visible-burger {

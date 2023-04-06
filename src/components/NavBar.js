@@ -159,6 +159,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? "link-active" : "nav-link"
             }
+            onClick={() => setBurgerOpen(false)}
         >
             <p className="logo">JustBuy</p>
           </NavLink>
@@ -170,6 +171,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? "nav-link active" : "nav-link"
             }
+            onClick={() => setBurgerOpen(false)}
           >
             Home
           </NavLink>
@@ -181,6 +183,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? "nav-link active" : "nav-link"
             }
+            onClick={() => setBurgerOpen(false)}
           >
             Shop
           </NavLink>
@@ -192,6 +195,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? "nav-link active" : "nav-link"
             }
+            onClick={() => setBurgerOpen(false)}
           >
             About
           </NavLink>
@@ -203,6 +207,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? "nav-link active" : "nav-link"
             }
+            onClick={() => setBurgerOpen(false)}
           >
             Contact
           </NavLink>

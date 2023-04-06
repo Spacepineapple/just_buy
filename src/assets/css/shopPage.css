@@ -116,7 +116,7 @@
 .basket-content {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 90%;
 }
 
 .basket-image img {
@@ -141,6 +141,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 30%;
 }
 
 .remove {
