@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/just_buy_ecommerce_site/static/css/main.e69002cb.css",
+    "main.js": "/just_buy_ecommerce_site/static/js/main.f1859c69.js",
+    "index.html": "/just_buy_ecommerce_site/index.html",
+    "main.e69002cb.css.map": "/just_buy_ecommerce_site/static/css/main.e69002cb.css.map",
+    "main.f1859c69.js.map": "/just_buy_ecommerce_site/static/js/main.f1859c69.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e69002cb.css",
+    "static/js/main.f1859c69.js"
+  ]
+}
