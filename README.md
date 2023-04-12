@@ -39,7 +39,7 @@ To run this project, you need to have Node.js installed on your system.
 
 ## Usage
 
-Visit the deployed [link](https://main--unrivaled-parfait-118a74.netlify.app/) to access the website. The website has the following routes:
+Visit the deployed [link](https://spacepineapple.github.io/just_buy/) to access the website. The website has the following routes:
 
 - `/` - displays the homepage with a carousel, top categories and top deals
 - `/shop` - displays the shop page with all the categories and a top deals section highlighting the top deals based on the highest discount percentage
